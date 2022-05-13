@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../../styles/Anime.module.css'
 import useStats from "../../utils/useStats"
 import Link from 'next/link';
+import episodes from '../../utils/episodes';
 
 export const getStaticPaths = async () => {
   const res = await fetch('https://api.jikan.moe/v4/top/anime')
@@ -27,8 +28,6 @@ export const getStaticProps = async (context) => {
   const res = await fetch("https://api.jikan.moe/v4/anime/" + id)
   const data = await res.json()
 
-  console.log(data)
-
   return {
     props: {
      anime: data.data
@@ -40,6 +39,7 @@ export const getStaticProps = async (context) => {
 
 
 export default function AnimeDetails({ anime }) {
+  console.log(anime.mal_id)
   return (
     <div className={styles.container}>
       <div className={styles.imageAndTitleSection}>
@@ -58,8 +58,12 @@ export default function AnimeDetails({ anime }) {
             ))}
           </div>
         </div>
+
+
       </div>
-            <h1>dd</h1>
+        <div className={styles.watch}>
+
+        </div>
     </div>
   )
 

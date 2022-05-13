@@ -1,5 +1,5 @@
 .container{
-  background-color: #EDF1F5;
+
   padding-top: 100px;
   height: 100vh;
 }
@@ -12,12 +12,13 @@
   background-color: white;
   margin: 0 100px;
   border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
 }
 
 .imageAndTitleSection .image{
   border-radius: 2px;
-  margin-left: 20px;
+  margin-left: 30px;
   margin-top: -20px;
   margin-bottom: -20px;
   height: 420px;
@@ -27,6 +28,7 @@
 .imageAndTitleSection .titleSection{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   padding: 10px;
 }
@@ -75,3 +77,8 @@
 }
 
 
+
+.watch iframe{
+  width: 1240px;
+  height: 1024px;
+}

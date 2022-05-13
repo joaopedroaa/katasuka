@@ -3,10 +3,12 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import useStats from "../utils/useStats"
 import Link from 'next/link';
+import { useState } from "react";
 
 
 export default function Home() {
-  const { stats, loading, error } = useStats('https://api.jikan.moe/v4/top/anime');
+  const [page, setPage] = useState(1);
+  const { stats, loading, error } = useStats('https://api.jikan.moe/v4/top/anime?page=' + page);
   if (loading) return <p>Carregando...</p>;
   if (error) return <p>Error...</p>;
 
@@ -42,6 +44,15 @@ export default function Home() {
           }
 
         </div>
+
+        <div className={styles.page}>
+          {<button type="button" onClick={() => setPage(page -= 2)}>{page - 2}</button>}
+          {<button type="button" onClick={() => setPage(page -= 1)}>{page - 1}</button>}
+          {<button className={styles.pageSelected} type="button">{page}</button>}
+          {<button type="button" onClick={() => setPage(page += 1)}>{page + 1}</button>}
+          {<button type="button" onClick={() => setPage(page += 2)}>{page + 2}</button>}
+        </div>
+
       </main>
 
       <footer className={styles.footer}>

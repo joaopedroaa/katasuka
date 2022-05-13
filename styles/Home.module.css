@@ -140,6 +140,28 @@
   margin-left: 0.5rem;
 }
 
+
+
+.page {
+
+}
+.page button{
+  width: 54px;
+  height: 54px;
+
+  margin: 6px;
+  background-color: white;
+  color: #1F1F1F;
+  border-radius: 4px;
+  font-weight: 700;
+  border: 0.1px solid rgb(31, 31, 31, 0.2);
+}
+
+.page .pageSelected{
+  background-color: #FF9900;
+}
+
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
