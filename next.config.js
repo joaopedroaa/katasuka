@@ -3,4 +3,22 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/anime',
+        permanent: true,
+      },
+    ]
+  },
+  images: {
+    domains: ['raw.githubusercontent.com'],
+  }
+
+}
+
+
+
+

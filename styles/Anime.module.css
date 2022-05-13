@@ -1,0 +1,77 @@
+.container{
+  background-color: #EDF1F5;
+  padding-top: 100px;
+  height: 100vh;
+}
+
+.imageAndTitleSection{
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 0 100px;
+  border-radius: 20px;
+
+}
+
+.imageAndTitleSection .image{
+  border-radius: 2px;
+  margin-left: 20px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  height: 420px;
+}
+
+
+.imageAndTitleSection .titleSection{
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+}
+
+.imageAndTitleSection .titleSection .titleAndScoreSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imageAndTitleSection .titleSection .titleAndScoreSection .title{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-size: 3rem;
+}
+
+.imageAndTitleSection .titleSection .titleAndScoreSection .score{
+
+  font-size: 2rem;
+
+}
+
+
+
+
+.imageAndTitleSection .titleSection .year{
+  margin: 0 3px;
+  font-size: 1.2rem;
+
+}
+
+.imageAndTitleSection .titleSection .synopsis{
+  margin-top: 20px;
+
+}
+
+.imageAndTitleSection .titleSection .genre{
+  margin-left: auto;
+
+}
+
+.imageAndTitleSection .titleSection .genre span{
+  margin: 0 10px;
+
+}
+
+
