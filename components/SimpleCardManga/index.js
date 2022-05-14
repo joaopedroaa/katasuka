@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import styles from './simpleCard.module.scss'
+import styles from './SimpleCardManga.module.scss'
 
-export default function SimpleCard({ imageUrl, title, score, year }) {
+export default function SimpleCardManga({ imageUrl, title, score, year }) {
   return (
     <div className={styles.card}>
       <Image src={imageUrl} alt={title} height="400px" width="0"/>

@@ -21,12 +21,12 @@ export default function Anime() {
 
         <div className={styles.section}>
           <h1>Top Season</h1>
-          <CardCarousel url='https://api.jikan.moe/v4/seasons/now' />
+          <CardCarousel opt="anime" url='https://api.jikan.moe/v4/seasons/now' />
         </div>
 
         <div className={styles.section}>
           <h1>Top Animes</h1>
-          <CardCarousel url='https://api.jikan.moe/v4/top/anime' />
+          <CardCarousel opt="anime" url='https://api.jikan.moe/v4/top/anime' />
         </div>
 
 

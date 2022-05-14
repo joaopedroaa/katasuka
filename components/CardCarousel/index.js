@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from 'next/link';
 import useEmblaCarousel from "embla-carousel-react";
-import SimpleCard from "../SimpleCard"
+import SimpleCardAnime from "../SimpleCardAnime"
+import SimpleCardManga from "../SimpleCardManga"
 import useStats from "../../utils/useStats"
 import styles from './CardCarousel.module.scss'
 
-const CardCarousel = ({ url }) => {
+const CardCarousel = ({ url, opt }) => {
   const { stats, loading, error } = useStats(url);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -49,9 +50,10 @@ const CardCarousel = ({ url }) => {
 
             {stats.data.map((anime) => (
               <div className={styles.gridSlide} key={anime.mal_id} >
-                <Link href={"/manga/" + anime.mal_id}  >
+                <Link href={`/${opt}/${anime.mal_id}` }  >
                   <a>
-                    <SimpleCard imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />
+                  {opt == "anime" && <SimpleCardAnime imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
+                  {opt == "manga" && <SimpleCardManga imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
                   </a>
                 </Link>
               </div>
