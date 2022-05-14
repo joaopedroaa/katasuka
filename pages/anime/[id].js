@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/Anime.module.css'
@@ -13,12 +14,6 @@ import { useRouter } from 'next/router'
 
 import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
 import EpisodesList from "../../components/EpisodesList"
-
-
-
-
-
-
 
 export const getServerSideProps = async (context) => {
   const { id } = context.query

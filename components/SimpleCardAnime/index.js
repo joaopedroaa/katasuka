@@ -8,7 +8,7 @@ export default function SimpleCardAnime({ id, imageUrl, title, score, year }) {
 
   return (
     <div className={`${styles.card} ${episodes[id] ? styles.cardok : styles.cardnotfound}`}>
-      <Image src={imageUrl} alt={title} height="400px" width="0" className={styles.Image}/>
+      <img src={imageUrl} alt={title} className={styles.Image}/>
       <div className={styles.cardInfos}>
         <h2>{title}</h2>
           {/* {episodes[id] && <p>Play</p>} */}
