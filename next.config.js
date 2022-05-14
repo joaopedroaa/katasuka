@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   images: {
-    domains: ['raw.githubusercontent.com'],
+    domains: ['cdn.myanimelist.net'],
   }
 
 }
