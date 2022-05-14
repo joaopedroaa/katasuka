@@ -40,8 +40,8 @@ export const getStaticProps = async (context) => {
 
 
 export default function AnimeDetails({ anime }) {
-  console.log("https://api.jikan.moe/v4/manga/" + anime.mal_id)
-  console.log(anime)
+  // console.log("https://api.jikan.moe/v4/manga/" + anime.mal_id)
+  // console.log(anime)
   return (
     <div className={styles.container}>
       <div className={styles.imageAndTitleSection}>

@@ -20,10 +20,10 @@ export default function Anime() {
           Katasuka
         </h1>
 
-        {/* <div className={styles.section}>
+        <div className={styles.section}>
           <h1>Top Season</h1>
           <CardCarousel opt="anime" url='https://api.jikan.moe/v4/seasons/now' />
-        </div> */}
+        </div>
 
         <div className={styles.section}>
           <h1>Top Animes</h1>

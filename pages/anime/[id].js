@@ -47,7 +47,7 @@ export const getStaticProps = async (context) => {
 
 
 export default function AnimeDetails({ anime }) {
-  console.log(anime)
+  // console.log(anime)
   return (
     <>
     <Header/>

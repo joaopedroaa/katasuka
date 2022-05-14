@@ -45,7 +45,6 @@ const CardCarousel = ({ url, opt }) => {
   if (loading) return <CardCarouselSkeleton/>;
   if (error) return <p>Error...</p>;
 
-  console.log(stats.data)
   return (
       <div className={styles.embla}>
         <div className={styles.embla__viewport} ref={emblaRef}>

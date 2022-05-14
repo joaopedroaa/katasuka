@@ -5,10 +5,20 @@ import episodes from "../../utils/episodes"
 
 import styles from './EpisodesList.module.scss'
 
+import EpisodesListSkeleton from "../EpisodesListSkeleton"
+
 const EpisodesList = ({ id }) => {
   const { stats, loading, error } = useStats(`https://api.jikan.moe/v4/anime/${id}/episodes`);
-  if (loading) return <p>Loadi...</p>;
   if (error) return <p>Error...</p>;
+  if (loading) return (
+    <ul className={styles.ulEpisodes}>
+      <EpisodesListSkeleton/>
+      <EpisodesListSkeleton/>
+      <EpisodesListSkeleton/>
+      <EpisodesListSkeleton/>
+      <EpisodesListSkeleton/>
+    </ul>
+  );
   if (episodes[id]) {
     const episodesUrl = episodes[id].url
 
