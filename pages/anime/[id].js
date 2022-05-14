@@ -9,6 +9,7 @@ import database from '../../utils/database';
 import CardCarousel from "../../components/CardCarousel"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
+import SteamEffect from "../../components/SteamEffect"
 import { useRouter } from 'next/router'
 
 
@@ -30,10 +31,11 @@ export default function AnimeDetails({ anime }) {
   return (
     <>
       <Header />
-      <h1 className={styles.title}>title: {anime.title}</h1>
+
       <div className={styles.container}>
         <div className={styles.imageAndTitleSection}>
-          <img src={anime.images.webp.large_image_url} alt="" className={styles.image} />
+          <SteamEffect src={anime.images.webp.large_image_url} />
+          {/* <img src={anime.images.webp.large_image_url} alt="" className={styles.image} /> */}
           <div className={styles.titleSection}>
             <div className={styles.titleAndScoreSection}>
               <h1 className={styles.title}> {anime.title}</h1>
