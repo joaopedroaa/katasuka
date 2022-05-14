@@ -4,6 +4,10 @@ import styles from '../../styles/Anime.module.css'
 import useStats from "../../utils/useStats"
 import Link from 'next/link';
 import episodes from '../../utils/episodes';
+import CardCarousel from "../../components/CardCarousel"
+import Header from "../../components/Header"
+import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
+
 
 export const getStaticPaths = async () => {
   const res = await fetch('https://api.jikan.moe/v4/top/anime')
@@ -30,7 +34,7 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-     anime: data.data
+      anime: data.data
     },
   };
 }
@@ -39,31 +43,40 @@ export const getStaticProps = async (context) => {
 
 
 export default function AnimeDetails({ anime }) {
+  console.log(anime)
   return (
-    <div className={styles.container}>
-      <div className={styles.imageAndTitleSection}>
-        <img src={anime.images.webp.large_image_url} alt="" className={styles.image}/>
-        <div className={styles.titleSection}>
-          <div className={styles.titleAndScoreSection}>
-            <h1 className={styles.title}> {anime.title}</h1>
-            <p className={styles.score}>{anime.score}</p>
-          </div>
+    <>
+    <Header/>
+      <div className={styles.container}>
+        <div className={styles.imageAndTitleSection}>
+          <img src={anime.images.webp.large_image_url} alt="" className={styles.image} />
+          <div className={styles.titleSection}>
+            <div className={styles.titleAndScoreSection}>
+              <h1 className={styles.title}> {anime.title}</h1>
+              <p className={styles.score}>{anime.score}</p>
+            </div>
 
-          <h2  className={styles.year}>{anime.year}</h2>
-          <p  className={styles.synopsis}>{anime.synopsis}</p>
-          <div className={styles.genre}>
-            {anime.genres.map((genre) => (
-              <span key={genre.mal_id}>{genre.name}</span>
-            ))}
+            <h2 className={styles.year}>{anime.year}</h2>
+            <p className={styles.synopsis}>{anime.synopsis}</p>
+            <div className={styles.genre}>
+              {anime.genres.map((genre) => (
+                <span key={genre.mal_id}>{genre.name}</span>
+              ))}
+            </div>
           </div>
         </div>
 
+        <main>
 
-      </div>
+
+        </main>
+
         <div className={styles.watch}>
-
+          <h1>Recommendations</h1>
+          <CardCarouselRecommendation opt="anime" url={`https://api.jikan.moe/v4/anime/${anime.mal_id}/recommendations`} />
         </div>
-    </div>
+      </div>
+    </>
   )
 
 

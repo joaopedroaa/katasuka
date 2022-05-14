@@ -3,7 +3,7 @@
 }
 
 .main {
-  /* min-height: 100vh; */
+  min-height: 100vh;
   padding:  0;
   flex: 1;
   display: flex;
@@ -74,11 +74,9 @@
 }
 
 
-
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.FourOhFour{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
