@@ -6,6 +6,7 @@ import Footer from "../components/Footer"
 
 
 export default function Anime() {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -24,11 +25,11 @@ export default function Anime() {
           <h1>Top Season</h1>
           <CardCarousel opt="anime" url='https://api.jikan.moe/v4/seasons/now' />
         </div>
-
+{/*
         <div className={styles.section}>
           <h1>Top Animes</h1>
           <CardCarousel opt="anime" url='https://api.jikan.moe/v4/top/anime' />
-        </div>
+        </div> */}
 
 
 

@@ -4,6 +4,7 @@ import styles from '../../styles/Anime.module.css'
 import useStats from "../../utils/useStats"
 import Link from 'next/link';
 import episodes from '../../utils/episodes';
+import database from '../../utils/database';
 import CardCarousel from "../../components/CardCarousel"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
@@ -14,13 +15,13 @@ import EpisodesList from "../../components/EpisodesList"
 
 
 export const getStaticPaths = async () => {
-  const res = await fetch('https://api.jikan.moe/v4/top/anime')
+  const res = await fetch('https://api.jikan.moe/v4/seasons/now')
   const data = await res.json()
 
-  const paths = data.data.map((anime) => {
+  const paths = Array.from({ length: 200000 }, (_, anime) => {
     return {
       params: {
-        id: anime.mal_id.toString()
+        id: anime.toString()
       }
     }
   })
@@ -47,7 +48,11 @@ export const getStaticProps = async (context) => {
 
 
 export default function AnimeDetails({ anime }) {
-  // console.log(anime)
+  console.log(Array.from(Array(50000).keys()))
+
+  if (!database[anime.mal_id]) {
+
+  }
   return (
     <>
     <Header/>
