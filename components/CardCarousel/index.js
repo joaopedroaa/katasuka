@@ -54,8 +54,8 @@ const CardCarousel = ({ url, opt }) => {
             <div className={styles.gridSlide} key={anime.mal_id} >
               <Link href={`/${opt}/${anime.mal_id}`}  >
                 <a>
-                  {opt == "anime" && <SimpleCardAnime imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
-                  {opt == "manga" && <SimpleCardManga imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
+                  {opt == "anime" && <SimpleCardAnime id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
+                  {opt == "manga" && <SimpleCardManga id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
                 </a>
               </Link>
             </div>

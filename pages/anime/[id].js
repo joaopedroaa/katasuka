@@ -7,8 +7,10 @@ import episodes from '../../utils/episodes';
 import CardCarousel from "../../components/CardCarousel"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
-// import Header from "../../components/Fo"
+
+
 import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
+import EpisodesList from "../../components/EpisodesList"
 
 
 export const getStaticPaths = async () => {
@@ -69,7 +71,7 @@ export default function AnimeDetails({ anime }) {
         </div>
 
         <main className={styles.Main}>
-
+          <EpisodesList id={anime.mal_id}/>
         </main>
 
         <div className={styles.watch}>

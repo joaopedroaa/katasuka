@@ -3,12 +3,7 @@ import styles from './Footer.module.scss'
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <a
-        href=""
-        target="_blank"
-        rel="noopener noreferrer">
-        Powered by Katasuka
-      </a>
+      Este site não hospeda nenhum vídeo em seu servidor
     </footer>
   )
 }

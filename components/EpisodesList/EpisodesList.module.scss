@@ -1,0 +1,25 @@
+.ulEpisodes{
+  margin: auto;
+
+  list-style: none;
+  margin-top: 100px;
+  max-width: 90vw;
+  padding: 0;
+}
+
+
+.liEpisodes{
+  display: block;
+  list-style: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  // margin: 10px;
+
+}
+.liEpisodes:hover{
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  // margin: 10px;
+
+}

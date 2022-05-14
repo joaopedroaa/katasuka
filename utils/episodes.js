@@ -1,50 +1,18 @@
 /* eslint-disable import/no-anonymous-default-export */
 // /* eslint-disable import/no-anonymous-default-export */
-export default  {
-  50265: {
-    "list": [
-      "https://lightspeedst.net/s1/mp4/spy-x-family/hd/1.mp4",
 
-    ]
-  },
-  30831: {
-    "list": [
-      "https://lightspeedst.net/s1/mp4/spy-x-family/hd/1.mp4",
-      "https://lightspeedst.net/s1/mp4/spy-x-family/hd/2.mp4",
-      "https://lightspeedst.net/s1/mp4/spy-x-family/hd/3.mp4",
-      "https://lightspeedst.net/s1/mp4/spy-x-family/hd/4.mp4",
-    ],
-  232323232: {
-    "list": [
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/1.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/2.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/3.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/4.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/5.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/6.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/7.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/8.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/9.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/10.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/11.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/12.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/13.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/14.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/15.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/16.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/17.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/18.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/19.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/20.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/21.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/22.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/23.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/24.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/25.mp4",
-      "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/26.mp4",
-    ]
-  }
-  }
-
+export default {
+  19: {"url": "https://lightspeedst.net/s4/mp4/monster/sd/" },
+  666:   { "url": "https://lightspeedst.net/s2/mp4/jojo-no-kimyou-na-bouken-tv-dublado/hd/" },
+  4181:  { "url": "https://lightspeedst.net/s3/mp4/clannad-after-story/sd/" },
+  5114:  { "url": "https://lightspeedst.net/s2/mp4/fullmetal-alchemist-brotherhood-dublado/sd/" },
+  9253:  { "url": "https://lightspeedst.net/s2/mp4/steins-gate/hd/" },
+  11061: { "url": "https://lightspeedst.net/s2/mp4/hunter-x-hunter-2011/hd/" },
+  28977: { "url": "https://lightspeedst.net/s2/mp4/gintama-season-4/sd/" },
+  40028: { "url": "https://lightspeedst.net/s2/mp4/shingeki-no-kyojin-the-final-season-dublado/hd/" },
+  48583: { "url": "https://lightspeedst.net/s1/mp4/shingeki-no-kyojin-the-final-season-part-2-dublado/hd/" },
+  50265: { "url": "https://lightspeedst.net/s1/mp4/spy-x-family/hd/", },
+  43608: { "url": "https://lightspeedst.net/s1/mp4/kaguya-sama-wa-kokurasetai-ultra-romantic-dublado/hd/" },
+  // 00000: {"url": "" },
 }
 

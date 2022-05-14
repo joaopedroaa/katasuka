@@ -80,12 +80,7 @@
 
 
 
-.watch iframe{
-  width: 1240px;
-  height: 1024px;
+.watch {
+  margin-top: 100px;
 }
 
-
-.Main{
-  height: 500px;
-}
