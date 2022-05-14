@@ -31,7 +31,7 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
-     anime: data.data
+     anime: data.data || null
     },
   };
 }
