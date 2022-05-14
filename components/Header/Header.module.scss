@@ -1,0 +1,150 @@
+.header {
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #eaeaea;
+  z-index: 10;
+  /* position: fixed; */
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: white;
+}
+
+.controlNavCheckbox {
+  display: none;
+}
+
+.header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 124px;
+  height: 100%;
+  transition: 0.1s;
+  font-size: 1rem;
+}
+
+.header a:hover {
+  background-color: rgb(142, 142, 142);
+  color: white;
+}
+
+.controlNavCheckbox:checked ~ .controlNavClose {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.controlNavCheckbox:checked ~ nav {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  /* background-color: red; */
+}
+
+@media screen and (max-width: 720px) {
+  .header {
+    height: auto;
+    position: fixed;
+    top: 6px;
+    right: 6px;
+    border: none;
+  }
+
+  .header .controlNav {
+    position: absolute;
+
+    right: 20px;
+    top: 20px;
+
+    display: block;
+    width: 30px;
+    padding: 5px 0;
+
+    border: solid #333;
+    border-width: 3px 0;
+
+    z-index: 2;
+    cursor: pointer;
+
+    backdrop-filter: blur(20px);
+  }
+
+  .header .controlNav:before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #333;
+  }
+
+  .header .controlNavClose {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.1);
+    transition: all 300ms linear;
+
+    transform: translate(100%, 0);
+  }
+
+  .header nav {
+    flex-direction: column;
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 200px;
+    border-left: 1px solid #ccc;
+    background-color: #fff;
+    opacity: 0.94;
+
+    /* backdrop-filter: blur(8px); */
+
+    overflow-x: auto;
+    z-index: 2;
+
+    transition: all 500ms ease;
+    transform: translate(100%, 0);
+  }
+
+  .header a {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-bottom: 1px solid #eaeaea;
+
+    width: 100%;
+    height: 14%;
+
+    padding: 20px;
+
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .header a:last-child {
+    border-bottom: none;
+  }
+}
