@@ -6,6 +6,8 @@ import Link from 'next/link';
 import episodes from '../../utils/episodes';
 import CardCarousel from "../../components/CardCarousel"
 import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+// import Header from "../../components/Fo"
 import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
 
 
@@ -66,8 +68,7 @@ export default function AnimeDetails({ anime }) {
           </div>
         </div>
 
-        <main>
-
+        <main className={styles.Main}>
 
         </main>
 
@@ -76,6 +77,7 @@ export default function AnimeDetails({ anime }) {
           <CardCarouselRecommendation opt="anime" url={`https://api.jikan.moe/v4/anime/${anime.mal_id}/recommendations`} />
         </div>
       </div>
+
     </>
   )
 

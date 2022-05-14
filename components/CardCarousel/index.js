@@ -5,7 +5,7 @@ import SimpleCardAnime from "../SimpleCardAnime"
 import SimpleCardManga from "../SimpleCardManga"
 import useStats from "../../utils/useStats"
 import styles from './CardCarousel.module.scss'
-import SimpleCardSkeleton from "../SimpleCardSkeleton"
+import CardCarouselSkeleton from "../CardCarouselSkeleton"
 
 
 const CardCarousel = ({ url, opt }) => {
@@ -42,17 +42,7 @@ const CardCarousel = ({ url, opt }) => {
     emblaApi.on("select", onSelect);
   }, [emblaApi, setScrollSnaps, onSelect]);
 
-  if (loading) return (
-    <div className={styles.skeletonContainer}>
-      <SimpleCardSkeleton />
-      <SimpleCardSkeleton />
-      <SimpleCardSkeleton />
-      <SimpleCardSkeleton />
-      <SimpleCardSkeleton />
-      <SimpleCardSkeleton />
-      <SimpleCardSkeleton />
-    </div >
-  );
+  if (loading) return <CardCarouselSkeleton/>;
   if (error) return <p>Error...</p>;
 
   console.log(stats.data)

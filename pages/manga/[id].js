@@ -4,6 +4,7 @@ import styles from '../../styles/Anime.module.css'
 import useStats from "../../utils/useStats"
 import Link from 'next/link';
 import episodes from '../../utils/episodes';
+import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
 
 export const getStaticPaths = async () => {
   const res = await fetch('https://api.jikan.moe/v4/top/manga')
@@ -62,8 +63,9 @@ export default function AnimeDetails({ anime }) {
 
 
       </div>
-        <div className={styles.watch}>
-
+      <div className={styles.watch}>
+          <h1>Recommendations</h1>
+          <CardCarouselRecommendation opt="manga" url={`https://api.jikan.moe/v4/manga/${anime.mal_id}/recommendations`} />
         </div>
     </div>
   )

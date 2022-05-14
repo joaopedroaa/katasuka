@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import CardCarousel from "../components/CardCarousel"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 
 export default function Manga() {
@@ -27,14 +28,7 @@ export default function Manga() {
 
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href=""
-          target="_blank"
-          rel="noopener noreferrer">
-          Powered by Katasuka
-        </a>
-      </footer>
+      <Footer/>
     </div>
   )
 }

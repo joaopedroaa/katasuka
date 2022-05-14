@@ -5,6 +5,8 @@ import SimpleCardAnime from "../SimpleCardAnime"
 import SimpleCardManga from "../SimpleCardManga"
 import useStats from "../../utils/useStats"
 import styles from './CardCarousel.module.scss'
+import CardCarouselSkeleton from "../CardCarouselSkeleton"
+
 
 const CardCarousel = ({ url, opt }) => {
   const { stats, loading, error } = useStats(url);
@@ -40,7 +42,7 @@ const CardCarousel = ({ url, opt }) => {
     emblaApi.on("select", onSelect);
   }, [emblaApi, setScrollSnaps, onSelect]);
 
-  if (loading) return <p>Carregando...</p>;
+  if (loading) return <CardCarouselSkeleton/>;
   if (error) return <p>Error...</p>;
 
   console.log(stats.data)
