@@ -8,42 +8,19 @@ import CardCarouselRecommendation from "../../components/CardCarouselRecommendat
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-export const getStaticPaths = async () => {
-  const res = await fetch('https://api.jikan.moe/v4/top/manga')
-  const data = await res.json()
 
-  const paths = Array.from({ length: 200000 }, (_, anime) => {
-    return {
-      params: {
-        id: anime.toString()
-      }
-    }
-  })
-
-  return {
-    paths,
-    fallback: false
-  }
-}
-
-export const getStaticProps = async (context) => {
-  const id = context.params.id
+export const getServerSideProps = async (context) => {
+  const { id } = context.query
   const res = await fetch("https://api.jikan.moe/v4/manga/" + id)
   const data = await res.json()
 
   return {
-    props: {
-      anime: data.data || null
-    },
-  };
+    props: { anime: data.data },
+  }
 }
 
 
-
-
-export default function AnimeDetails({ anime }) {
-  // console.log("https://api.jikan.moe/v4/manga/" + anime.mal_id)
-  // console.log(anime)
+export default function MangaDetails({ anime }) {
   return (
     <>
       <Header />
@@ -67,7 +44,7 @@ export default function AnimeDetails({ anime }) {
 
 
         </div>
-        <div className={styles.watch}>
+        <div className={styles.recommendation}>
           <h1>Recommendations</h1>
           <CardCarouselRecommendation opt="manga" url={`https://api.jikan.moe/v4/manga/${anime.mal_id}/recommendations`} />
         </div>

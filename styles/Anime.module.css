@@ -13,7 +13,8 @@
   margin: 0 100px;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-
+  width: 90vw;
+  margin: auto;
 
 }
 
@@ -86,7 +87,11 @@
 
 
 
-.watch {
+.recommendation {
   margin-top: 100px;
+  max-width: 95vw;
+  /* background-color: red; */
+  margin: auto;
+  overflow: hidden;
 }
 

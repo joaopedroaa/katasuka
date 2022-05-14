@@ -8,54 +8,34 @@ import database from '../../utils/database';
 import CardCarousel from "../../components/CardCarousel"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
+import { useRouter } from 'next/router'
 
 
 import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
 import EpisodesList from "../../components/EpisodesList"
 
 
-export const getStaticPaths = async () => {
-  const res = await fetch('https://api.jikan.moe/v4/seasons/now')
-  const data = await res.json()
 
-  const paths = Array.from({ length: 200000 }, (_, anime) => {
-    return {
-      params: {
-        id: anime.toString()
-      }
-    }
-  })
 
-  return {
-    paths,
-    fallback: false
-  }
-}
 
-export const getStaticProps = async (context) => {
-  const id = context.params.id
+
+
+export const getServerSideProps = async (context) => {
+  const { id } = context.query
   const res = await fetch("https://api.jikan.moe/v4/anime/" + id)
   const data = await res.json()
 
   return {
-    props: {
-      anime: data.data || null
-    },
-  };
+    props: { anime: data.data },
+  }
 }
 
 
-
-
 export default function AnimeDetails({ anime }) {
-  console.log(Array.from(Array(50000).keys()))
-
-  if (!database[anime.mal_id]) {
-
-  }
   return (
     <>
-    <Header/>
+      <Header />
+      <h1 className={styles.title}>title: {anime.title}</h1>
       <div className={styles.container}>
         <div className={styles.imageAndTitleSection}>
           <img src={anime.images.webp.large_image_url} alt="" className={styles.image} />
@@ -75,11 +55,11 @@ export default function AnimeDetails({ anime }) {
           </div>
         </div>
 
-        <main className={styles.Main}>
-          <EpisodesList id={anime.mal_id}/>
+        <main className={styles.main}>
+          <EpisodesList id={anime.mal_id} />
         </main>
 
-        <div className={styles.watch}>
+        <div className={styles.recommendation}>
           <h1>Recommendations</h1>
           <CardCarouselRecommendation opt="anime" url={`https://api.jikan.moe/v4/anime/${anime.mal_id}/recommendations`} />
         </div>
@@ -87,7 +67,4 @@ export default function AnimeDetails({ anime }) {
 
     </>
   )
-
-
-
 }
