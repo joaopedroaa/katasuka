@@ -9,9 +9,9 @@ import SimpleCardSkeleton from "../../components/SimpleCardSkeleton"
 import Link from 'next/link'
 import useStats from "../../utils/useStats"
 
-export default function CardGrid({ opt }) {
+export default function CardGrid({ opt, url }) {
 
-  const { stats, loading, error } = useStats("https://api.jikan.moe/v4/top/anime");
+  const { stats, loading, error } = useStats(url);
 
   if (error) return <p>Error...</p>;
   if (loading) return (

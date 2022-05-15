@@ -77,5 +77,12 @@
   justify-content: center;
 }
 
-
+.loadMoreButton{
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  background-color: #090d21;
+  color: white;
+}
 

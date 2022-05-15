@@ -2,14 +2,10 @@
 import Head from 'next/head'
 
 import styles from '../../styles/AnimeDetails.module.css'
-import { useStats, episodes, database, synopsisResume } from "../../utils"
+import synopsisResume from "../../utils/synopsisResume"
 
-import CardCarousel from "../../components/CardCarousel"
 import Header from "../../components/Header"
-import Footer from "../../components/Footer"
 import SteamEffect from "../../components/SteamEffect"
-
-
 import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
 import EpisodesList from "../../components/EpisodesList"
 
@@ -25,7 +21,7 @@ export const getServerSideProps = async (context) => {
 
 
 export default function AnimeDetails({ anime }) {
-
+  console.log(synopsisResume)
   return (
     <>
       <Head>

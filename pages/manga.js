@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/AnimeHome.module.css'
+
 import CardCarousel from "../components/CardCarousel"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
