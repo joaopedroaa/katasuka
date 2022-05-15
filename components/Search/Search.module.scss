@@ -1,0 +1,41 @@
+.main{
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.section{
+  margin-right: 20px;
+  border: 1px solid rgb(0, 0, 0, 0.2) ;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+
+
+.searchText {
+  all: unset;
+
+  padding: 4px 20px;
+  font-size: 1rem;
+
+  height: 40px;
+  border: none;
+}
+
+.searchButton {
+  all: unset;
+  padding: 14px 20px;
+  border: none;
+
+
+  // height: 100%;
+  // width: 40px;
+  // border: 1px solid black ;
+  // margin-left: 10px;
+  color: white;
+  background-color: #E5989B;
+}

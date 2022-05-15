@@ -23,7 +23,7 @@ export default function AnimeTop({ url}) {
       <Header />
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Kataddsuka
+        Katasuka
         </h1>
 
         {pages.map((page) => (

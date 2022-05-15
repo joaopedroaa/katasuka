@@ -6,6 +6,7 @@ import styles from '../styles/AnimeHome.module.css'
 import CardCarousel from "../components/CardCarousel"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import Search from "../components/Search"
 
 export default function Anime() {
 
@@ -22,6 +23,8 @@ export default function Anime() {
         <h1 className={styles.title}>
           Katasuka
         </h1>
+
+        <Search />
 
         <div className={styles.section}>
           <Link href="/anime/season">
