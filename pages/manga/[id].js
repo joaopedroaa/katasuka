@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../../styles/Anime.module.css'
+import styles from '../../styles/AnimeDetails.module.css'
 import useStats from "../../utils/useStats"
 import Link from 'next/link';
 import episodes from '../../utils/episodes';

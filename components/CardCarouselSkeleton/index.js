@@ -11,7 +11,6 @@ const CardCarouselSkeleton = props => (
     <SimpleCardSkeleton />
     <SimpleCardSkeleton />
     <SimpleCardSkeleton />
-    <SimpleCardSkeleton />
   </div >
 )
 

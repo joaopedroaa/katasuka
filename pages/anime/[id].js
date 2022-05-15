@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../../styles/Anime.module.css'
+import styles from '../../styles/AnimeDetails.module.css'
 import useStats from "../../utils/useStats"
 import Link from 'next/link';
 import episodes from '../../utils/episodes';
@@ -57,10 +57,12 @@ export default function AnimeDetails({ anime }) {
         </main>
 
         <div className={styles.recommendation}>
-          <h1>Recommendations</h1>
           <CardCarouselRecommendation opt="anime" url={`https://api.jikan.moe/v4/anime/${anime.mal_id}/recommendations`} />
+
         </div>
       </div>
+
+          {/* <Footer /> */}
 
     </>
   )

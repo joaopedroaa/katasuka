@@ -45,6 +45,7 @@ const CardCarousel = ({ url, opt }) => {
   if (loading) return <CardCarouselSkeleton/>;
   if (error) return <p>Error...</p>;
 
+  // return <CardCarouselSkeleton/>;
 
   return (
     <div className={styles.embla}>
