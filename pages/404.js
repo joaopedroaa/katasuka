@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Header from "../components/Header"
-import styles from '../styles/Home.module.css'
+import styles from '../styles/AnimeHome.module.css'
 
 export default function FourOhFour() {
   return <>

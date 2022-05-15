@@ -23,6 +23,11 @@ export const getServerSideProps = async (context) => {
 export default function MangaDetails({ anime }) {
   return (
     <>
+      <Head>
+        <title>Katasuka - {anime.title}</title>
+        <meta name="description" content={anime.synopsis} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
       <div className={styles.container}>
         <div className={styles.imageAndTitleSection}>

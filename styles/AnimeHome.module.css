@@ -4,14 +4,13 @@
 
 .main {
   min-height: 100vh;
-  padding:  0;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 
 .title a {
   color: #0070f3;
@@ -36,8 +35,7 @@
   color: #e5989b;
 }
 
-
-.section{
+.section {
   /* display: flex; */
   /* flex-direction: column; */
   /* align-items: center; */
@@ -48,24 +46,36 @@
   margin-bottom: 3rem; */
   /* margin: 0 100px; */
   /* padding: 0 100px ; */
-
 }
-.section h1{
+.section .subtitle {
   margin-bottom: 0;
   color: black;
   margin-left: 2rem;
-
+  cursor: pointer;
 }
+
+.section .subtitle::after {
+  content: "→";
+  position: absolute;
+  margin-left: 5px;
+  transition: transform 0.15s ease;
+}
+
+.subtitle:hover:after {
+  transform: translateX(5px);
+}
+
 
 .logo {
   height: 1em;
   margin-left: 0.5rem;
 }
 
-
-.FourOhFour{
+.FourOhFour {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+
 

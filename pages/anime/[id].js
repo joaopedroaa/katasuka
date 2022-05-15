@@ -1,16 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
-import Image from 'next/image'
+
 import styles from '../../styles/AnimeDetails.module.css'
-import useStats from "../../utils/useStats"
-import Link from 'next/link';
-import episodes from '../../utils/episodes';
-import database from '../../utils/database';
+import { useStats, episodes, database, synopsisResume } from "../../utils"
+
 import CardCarousel from "../../components/CardCarousel"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import SteamEffect from "../../components/SteamEffect"
-import { useRouter } from 'next/router'
 
 
 import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
@@ -28,8 +25,14 @@ export const getServerSideProps = async (context) => {
 
 
 export default function AnimeDetails({ anime }) {
+
   return (
     <>
+      <Head>
+        <title>Katasuka - {anime.title}</title>
+        <meta name="description" content={anime.synopsis} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
 
       <div className={styles.container}>
@@ -43,7 +46,7 @@ export default function AnimeDetails({ anime }) {
             </div>
 
             <h2 className={styles.year}>{anime.year}</h2>
-            <p className={styles.synopsis}>{anime.synopsis}</p>
+            <p className={styles.synopsis}>{synopsisResume(anime.synopsis, 1242)}</p>
             <div className={styles.genre}>
               {anime.genres.map((genre) => (
                 <span key={genre.mal_id}>{genre.name}</span>
@@ -62,7 +65,7 @@ export default function AnimeDetails({ anime }) {
         </div>
       </div>
 
-          {/* <Footer /> */}
+      {/* <Footer /> */}
 
     </>
   )

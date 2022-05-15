@@ -3,7 +3,7 @@ import styles from '../styles/AnimeHome.module.css'
 import CardCarousel from "../components/CardCarousel"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-
+import Link from 'next/link'
 
 export default function Anime() {
 
@@ -15,26 +15,30 @@ export default function Anime() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header/>
+      <Header />
       <main className={styles.main}>
         <h1 className={styles.title}>
           Katasuka
         </h1>
 
         <div className={styles.section}>
-          <h1>Top Season</h1>
+          <Link href="/anime/season">
+            <h2 className={styles.subtitle}>Top Season</h2>
+          </Link>
           <CardCarousel opt="anime" url='https://api.jikan.moe/v4/seasons/now' />
         </div>
 
+
         <div className={styles.section}>
-          <h1>Top Animes</h1>
+          <Link href="/anime/top">
+            <h2 className={styles.subtitle}>Top Animes</h2>
+          </Link>
           <CardCarousel opt="anime" url='https://api.jikan.moe/v4/top/anime' />
         </div>
 
 
-
       </main>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

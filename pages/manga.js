@@ -17,9 +17,7 @@ export default function Manga() {
 
       <Header/>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Katasuka
-        </h1>
+        <h1 className={styles.title}>Katasuka</h1>
 
         <div className={styles.section}>
           <h1>Top Mangas</h1>
