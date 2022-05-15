@@ -33,7 +33,7 @@ export default function AnimeDetails({ anime }) {
 
       <div className={styles.container}>
         <div className={styles.imageAndTitleSection}>
-          <SteamEffect src={anime.images.webp.large_image_url} />
+          <SteamEffect src={anime.images.webp.large_image_url} className={styles.SteamEffect} />
           {/* <img src={anime.images.webp.large_image_url} alt="" className={styles.image} /> */}
           <div className={styles.titleSection}>
             <div className={styles.titleAndScoreSection}>

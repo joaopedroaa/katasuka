@@ -7,7 +7,6 @@ import useStats from "../../utils/useStats"
 import styles from './CardCarousel.module.scss'
 import CardCarouselSkeleton from "../CardCarouselSkeleton"
 
-
 const CardCarousel = ({ url, opt }) => {
   const { stats, loading, error } = useStats(url);
 

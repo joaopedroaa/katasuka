@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: white;
+  background-color: #ffffff;
   margin: 1rem 0.4rem;
 
   text-align: left;
@@ -14,23 +14,28 @@
 }
 
 .cardok {
-  border-bottom: 10px solid #a5e1ad;
+  border-bottom: 8px solid #a5e1ad;
 }
 .cardnotfound {
-  border-bottom: 10px solid #e5989b;
+  border-bottom: 8px solid #e5989b;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  // color: red;
-  /* color: #e5989b; */
-  // border-color: red;
+  background-color: #f1f1f1;
+  // color: #e7a2a5;
 
-  transform: translate(1);
-   transform: translateY(-6px);
-  transition: 0.2s ease;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.4);
+
+  // color: red;
+  // border-color: red;
+// background-color: e5989b;
+  // transform: translate(1);
+  //  transform: translateY(-6px);
+  // transition: 0.2s ease;
+  // box-shadow: 0 6px 6px rgba(0, 0, 0, 0.4);
+  // opacity: 0.6;
+  // transform: rotatex(7deg) translatey(-6px) scale(1.05);
 }
 
 .card h2 {
@@ -55,7 +60,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 120px;
+  height: 110px;
   padding: 10px;
 }
 
