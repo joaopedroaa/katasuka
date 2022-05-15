@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Head from 'next/head'
-import styles from '../../styles/AnimeHome.module.css'
+import styles from '../../styles/AnimeHome.module.scss'
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import CardGrid from "../../components/CardGrid"

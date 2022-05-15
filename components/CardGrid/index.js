@@ -47,8 +47,6 @@ export default function CardGrid({ opt, url }) {
           </div>
         ))}
       </div>
-
-
     </div>
   )
 }

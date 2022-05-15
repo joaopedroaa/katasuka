@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-import styles from '../styles/AnimeHome.module.css'
+import styles from '../styles/AnimeHome.module.scss'
 
 import CardCarousel from "../components/CardCarousel"
 import Header from "../components/Header"

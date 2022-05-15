@@ -42,6 +42,7 @@ const CardCarousel = ({ url, opt }) => {
     emblaApi.on("select", onSelect);
   }, [emblaApi, setScrollSnaps, onSelect]);
 
+  console.log(stats)
   if (loading) return <CardCarouselSkeleton />;
   if (error) return <p>Error...</p>;
 

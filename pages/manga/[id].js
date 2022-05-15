@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../../styles/AnimeDetails.module.css'
+import styles from '../../styles/AnimeDetails.module.scss'
 
 import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
 import Header from '../../components/Header';

@@ -1,0 +1,83 @@
+.container {
+  /* padding-top: 100px; */
+  height: 100vh;
+}
+
+.imageAndTitleSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  margin: 0 100px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 95vw;
+  margin: auto;
+
+  // .SteamEffect {
+  //   border-radius: 20px;
+  //   margin-left: 30px;
+  //   margin-right: 10px;
+  //   margin-top: -20px;
+  //   margin-bottom: -20px;
+  //   height: 420px;
+  //   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  // }
+
+  .titleSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-right: auto;
+    padding: 10px;
+    padding-right: 20px;
+    width: 100%;
+    height: 100%;
+
+    .titleAndScoreSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        font-size: 2.4rem;
+        width: 500px;
+
+      }
+
+      .score {
+        font-size: 2rem;
+      }
+    }
+
+    .year {
+      margin: 0 3px;
+      font-size: 1.2rem;
+    }
+
+    .synopsis {
+      margin-top: 20px;
+    }
+
+    .genre {
+      margin-left: auto;
+
+      span {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.recommendation {
+  margin-top: 100px;
+  max-width: 95vw;
+  /* background-color: red; */
+  margin: auto;
+  overflow: hidden;
+}

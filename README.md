@@ -5,5 +5,5 @@
 
 ### Todo
 
-- [ ] Load more top animes
-- [ ] Search
+- [x] Load more top animes
+- [x] Search
