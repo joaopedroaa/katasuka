@@ -31,7 +31,7 @@ export default function Anime() {
           <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/anime?q=${search}`) }} className={styles.searchButton}>Search</button>
         </div>
 
-        {searchUrl && <CardCarousel opt="anime" url={searchUrl} />}
+        {searchUrl && <CardCarousel slug="anime" url={searchUrl} />}
       </main>
 
     </div>

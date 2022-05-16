@@ -12,10 +12,10 @@ import { useState, useEffect } from 'react';
 import useStats from "../../utils/useStats"
 
 
-export default function CharactersGrid({ id }) {
+export default function CharactersGrid({ id, slug }) {
   // const [search, setSearch] = useState();
 
-  const { stats, loading, error } = useStats(`https://api.jikan.moe/v4/anime/${id}/characters`);
+  const { stats, loading, error } = useStats(`https://api.jikan.moe/v4/${slug}/${id}/characters`);
 
   if (loading) return <p>Loading Characters...</p>;
   if (error) return <p>Error...</p>;

@@ -22,10 +22,10 @@ export default function Manga() {
 
         <div className={styles.section}>
 
-          <Link href="/manga/top">
             <h2 className={styles.subtitle}>Top Mangas</h2>
-          </Link>
-          <CardCarousel opt="manga" url='https://api.jikan.moe/v4/top/manga' />
+          {/* <Link href="/manga/top">
+          </Link> */}
+          <CardCarousel slug="manga" opt="default" url='https://api.jikan.moe/v4/top/manga' />
         </div>
 
       </main>

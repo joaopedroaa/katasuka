@@ -7,7 +7,9 @@ import useStats from "../../utils/useStats"
 import styles from './CardCarousel.module.scss'
 import CardCarouselSkeleton from "../CardCarouselSkeleton"
 
-const CardCarousel = ({ url, opt }) => {
+import episodes from "../../utils/episodes"
+
+const CardCarousel = ({ url, filterAnime, slug, opt }) => {
   const { stats, loading, error } = useStats(url);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -25,7 +27,6 @@ const CardCarousel = ({ url, opt }) => {
   const scrollTo = useCallback((index) => emblaApi && emblaApi.scrollTo(index), [
     emblaApi
   ]);
-
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -45,20 +46,27 @@ const CardCarousel = ({ url, opt }) => {
   if (error) return <p>Error...</p>;
 
   // return <CardCarouselSkeleton/>;
-
   return (
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
           {stats.data.map((anime) => {
+            if (opt == "recomend") anime = anime.entry
+
+
+
+
+            if (!episodes[anime.mal_id] && filterAnime) return (
+              <></>
+            )
+
             return (
               <div key={anime.mal_id} className={styles.gridSlide}  >
-                <Link href={`/${opt}/${anime.mal_id}`}  >
+                {console.log(anime.mal_id)}
+                <Link href={`/${slug}/${anime.mal_id}`}  >
                   <a>
-
-                    {opt == "anime" && <SimpleCard mal_id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={anime.score} infoLeft={anime.episodes} />}
-                    {opt == "manga" && <SimpleCard mal_id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={anime.score} infoLeft={anime.chapters} />}
-                    {opt == "recommendation" && <SimpleCard mal_id={anime.entry.mal_id} imageUrl={anime.entry.images.webp.large_image_url} title={anime.entry.title} infoRight={`${anime.votes} votes`} />}
+                    {opt == "recomend" && <SimpleCard mal_id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={` votes`} />}
+                    {opt == "default" && <SimpleCard mal_id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={anime.score} infoLeft={anime.episodes} filterAnime={filterAnime} />}
                   </a>
                 </Link>
               </div>
