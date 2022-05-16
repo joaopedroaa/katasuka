@@ -51,13 +51,9 @@ export default function Anime() {
                 id="material-switch"
               />
             </div>
-
-
             <h1 className={styles.title}>
               Katasuka
             </h1>
-
-
             <div className={styles.headerSearchRight}>
               <input type="text" name="name" className={stylesSearch.searchText} onChange={(event) => { setSearch(event.target.value) }} />
               <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/anime?q=${search}`) }} className={stylesSearch.searchButton}>Search</button>

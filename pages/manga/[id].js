@@ -23,6 +23,13 @@ export const getServerSideProps = async (context) => {
 
 
 export default function MangaDetails({ anime }) {
+  const fromDate = anime.published.prop.from
+  const toDate = anime.published.prop.to
+
+  const fromDateString = `${fromDate.day}/${fromDate.month}/${fromDate.year}`
+  const toDateString = `${toDate.day}/${toDate.month}/${toDate.year}`
+
+
   const [full, setFull] = useState(false);
   // const [search, setSearch] = useState();
   const displayFull = {
@@ -60,14 +67,23 @@ export default function MangaDetails({ anime }) {
               <p>{anime.status}</p>
             </>}
 
-            {anime.episodes && <>
-              <h3 >Episodes</h3>
-              <p>{anime.episodes}</p>
+            {anime.score && <>
+              <h3 >Score</h3>
+              <p>{anime.score}</p>
             </>}
 
-            {anime.source && <>
-              <h3 >Source</h3>
-              <p>{anime.source}</p>
+            {anime.volumes && <>
+              <h3 >Volumes</h3>
+              <p>{anime.volumes}</p>
+            </>}
+            {anime.chapters && <>
+              <h3 >Chapters</h3>
+              <p>{anime.chapters}</p>
+            </>}
+
+            {anime.popularity && <>
+              <h3 >Popularity</h3>
+              <p>{anime.popularity}</p>
             </>}
 
             {anime.type && <>
@@ -75,15 +91,15 @@ export default function MangaDetails({ anime }) {
               <p>{anime.type}</p>
             </>}
 
-            {/* {anime.aired.prop.from.day && <>
+            {anime.published.prop.from.day && <>
               <h3>Start Date</h3>
               <p>{fromDateString}</p>
             </>}
 
-            {anime.aired.prop.to.day && <>
+            {anime.published.prop.to.day && <>
               <h3>End Date</h3>
               <p>{toDateString}</p>
-            </>} */}
+            </>}
 
             {anime.title_english && <>
               <h3 >English Title</h3>
@@ -95,31 +111,32 @@ export default function MangaDetails({ anime }) {
               <p>{anime.title_japanese}</p>
             </>}
 
+
             {anime.title_synonyms.length != 0 && <>
               <h3 >Synonyms</h3>
               {anime.title_synonyms.map((synonym) => <p key={synonym}>{synonym}</p>)}
             </>}
 
-            {/* {anime.producers.length != 0 && <>
-              <h3>Producers</h3>
-              {anime.producers.map((producer) => {
+            {anime.authors.length != 0 && <>
+              <h3>Authors</h3>
+              {anime.authors.map((producer) => {
+                return (<p key={producer.mal_id}>{producer.name}</p>)
+              })}
+            </>}
+            {anime.serializations.length != 0 && <>
+              <h3>Serializations</h3>
+              {anime.serializations.map((producer) => {
                 return (<p key={producer.mal_id}>{producer.name}</p>)
               })}
             </>}
 
-            {anime.studios.length != 0 && <>
-              <h3>Studios</h3>
-              {anime.studios.map((studio) => {
-                return (<p key={studio.mal_id}>{studio.name}</p>)
-              })}
-            </>}
 
             {anime.themes.length != 0 && <>
               <h3>Themes</h3>
               {anime.themes.map((theme) => {
                 return (<p key={theme.mal_id}>{theme.name}</p>)
               })}
-            </>} */}
+            </>}
           </div>
 
         </main>
