@@ -1,3 +1,15 @@
+:root {
+  --principal1: #e5989b;
+  --principal2: #a5e1ad;
+  --background1: #f7f7f7; /* Real Background */
+  --background2: #ffffff; /* Card */
+  --background3: #e5e5e5; /* Hover 1 */
+  --background4: #d8d8d8;
+
+  --foreground1: #000000;
+  --foreground2: #090d21;
+  --shadow: rgb(0, 0, 0, 0.1);
+}
 
 [data-theme='light'] {
   --principal1: #e5989b;

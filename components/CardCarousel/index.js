@@ -7,7 +7,7 @@ import useStats from "../../utils/useStats"
 import styles from './CardCarousel.module.scss'
 import CardCarouselSkeleton from "../CardCarouselSkeleton"
 
-import episodes from "../../utils/episodes"
+import episodes from "../../data/episodes"
 
 const CardCarousel = ({ url, filterAnime, slug, opt }) => {
   const { stats, loading, error } = useStats(url);

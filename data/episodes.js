@@ -2,7 +2,6 @@
 // /* eslint-disable import/no-anonymous-default-export */
 
 export default {
-
   19: { "url": "https://lightspeedst.net/s4/mp4/monster/sd/" },
   170: { "url": "https://lightspeedst.net/s2/mp4/slam-dunk/sd/" },
   4181: { "url": "https://lightspeedst.net/s3/mp4/clannad-after-story/sd/" },
@@ -27,7 +26,6 @@ export default {
   28725: { "url": "https://lightspeedst.net/s3/mp4/kokoro-ga-sakebitagatterunda/hd/" },
   40787: { "url": "https://lightspeedst.net/s2/mp4/josee-to-tora-to-sakana-tachi/hd/" },
   1535: { "url": "https://lightspeedst.net/s3/mp4/death-note/sd/1.mp4" }
-
 
   // 00000: { "url": "" },
   // 00000: { "url": "" },

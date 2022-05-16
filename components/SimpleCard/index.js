@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './SimpleCard.module.scss'
-import episodes from "../../utils/episodes"
+import episodes from "../../data/episodes"
 import synopsisResume from "../../utils/synopsisResume"
 import SteamEffect from '../SteamEffect'
 

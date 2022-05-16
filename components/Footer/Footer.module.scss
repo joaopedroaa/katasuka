@@ -2,12 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
 
   padding: 1.4rem;
   margin-top: 40px;
-
-
 
   // border-top: 1px solid var(--shadow);
   background-color: var(--background2);
@@ -20,13 +17,33 @@
   //   flex-grow: 1;
   // }
 
-  .dmca{
+  .warning {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .dmca {
     text-decoration: underline;
   }
 
   .themes {
     select {
+      background-color: var(--background3);
+      color: var(--foreground1);
       font-size: 1rem;
+      padding: 6px 10px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    .warning {
+      margin: 14px 0;
     }
   }
 }

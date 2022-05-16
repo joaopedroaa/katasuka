@@ -7,7 +7,7 @@ import SimpleCard from "../../components/SimpleCard"
 import SimpleCardSkeleton from "../../components/SimpleCardSkeleton"
 import Link from 'next/link'
 import useStats from "../../utils/useStats"
-import episodes from "../../utils/episodes"
+import episodes from "../../data/episodes"
 
 
 export default function CardGrid({ opt, url, filterAnime }) {

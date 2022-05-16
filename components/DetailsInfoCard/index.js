@@ -5,7 +5,7 @@ import styles from './DetailsInfoCard.module.scss'
 // import stylesHome from '../../styles/AnimeHome.module.scss'
 
 import synopsisResume from "../../utils/synopsisResume"
-import episodes from "../../utils/episodes"
+import episodes from "../../data/episodes"
 
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"

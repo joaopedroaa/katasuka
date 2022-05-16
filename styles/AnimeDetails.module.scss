@@ -20,6 +20,9 @@
   margin: auto;
   margin-top: 100px;
 }
+.mainContainerFull{
+  max-width: 100%;
+}
 
 .mainContainerEpisodes{
   display: flex;
@@ -55,4 +58,53 @@
   .videoIframe {
     width: 1000px;
   }
+}
+
+.iframeSection{
+
+
+  .iframeManga{
+  }
+
+  .iframeMangaNormal{
+
+    width: 99%;
+    height: 900px;
+    // margin: 0 20px;
+
+  }
+
+
+  .iframeMangaFull{
+    width: 100vw;
+    height: 1920vw;
+    // padding: 40px;
+
+  }
+
+  .iframeMangaButton{
+    padding: 10px;
+    border: none;
+    background-color: var(--background2);
+    color: var(--foreground1);
+  }
+
+  .iframeMangaButtonNormal{
+    position:relative;
+    opacity: 0.7;
+    float: right;
+    right: 30px;
+    bottom: 55px;
+  }
+
+  .iframeMangaButtonFull{
+    position: fixed;
+    z-index: 100;
+
+    opacity: 0.7;
+    // float: right;
+    right:10px;
+    bottom:10px;
+  }
+
 }
