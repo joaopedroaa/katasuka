@@ -38,17 +38,14 @@ export default function AnimeDetails({ anime }) {
 
       <div className={styles.container}>
         <Header />
-
         <DetailsInfoCard slug="anime" anime={anime} />
-
-
 
         {episodes[anime.mal_id] &&
           <main className={styles.main}>
             <EpisodesList id={anime.mal_id} />
           </main>}
 
-        <div className={stylesHome.section}>
+        <div className={`${stylesHome.section} + ${stylesHome.sectionRecommendations}`}>
           <h2 className={stylesHome.subtitle}>Recommendations</h2>
           <CardCarousel slug="anime" opt="recomend" url={`https://api.jikan.moe/v4/anime/${anime.mal_id}/recommendations`} />
         </div>

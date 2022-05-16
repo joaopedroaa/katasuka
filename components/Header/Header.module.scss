@@ -10,39 +10,45 @@
   margin-bottom: 4rem;
   border-bottom: 1px solid var(--shadow);
   background-color: var(--background2);
+  color: var(--foreground1);
   z-index: 10;
   /* position: fixed; */
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    // background-color: var(--background2);
+  }
+
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 124px;
+    height: 100%;
+    transition: 0.1s;
+    font-size: 1rem;
+    background-color: var(--background2);
+    color: var(--foreground1);
+
+    &:hover {
+      filter: brightness(85%);
+    }
+  }
+
 }
 
-.header nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  width: 100%;
-  height: 100%;
-
-  // background-color: var(--background2);
-}
 
 .controlNavCheckbox {
   display: none;
-}
-
-.header a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 124px;
-  height: 100%;
-  transition: 0.1s;
-  font-size: 1rem;
-}
-
-.header a:hover {
-  background-color: rgb(142, 142, 142);
-  color: var(--background1);
 }
 
 .controlNavCheckbox:checked ~ .controlNavClose {

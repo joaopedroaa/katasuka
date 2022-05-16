@@ -1,11 +1,37 @@
-:root {
-  /* Your default theme */
+
+[data-theme='light'] {
   --principal1: #e5989b;
   --principal2: #a5e1ad;
-  --background1: #fafafa;
-  --background2: #ffffff;
-  /* --background2: red; */
-  --background-hover: #f1f1f1;
+  --background1: #f7f7f7; /* Real Background */
+  --background2: #ffffff; /* Card */
+  --background3: #e5e5e5; /* Hover 1 */
+  --background4: #d8d8d8;
+
+  --foreground1: #000000;
+  --foreground2: #090d21;
+  --shadow: rgb(0, 0, 0, 0.1);
+}
+
+[data-theme='light-blue'] {
+  --principal1: #e5989b;
+  --principal2: #a5e1ad;
+  --background1: #f8f9ff;
+  --background2: #EEF2FF;
+  --background3: #e5ebfd;
+  --background4: #b3c3fd;
+
+  --foreground1: #000000;
+  --foreground2: #090d21;
+  --shadow: rgb(0, 0, 0, 0.1);
+}
+[data-theme='light-pink'] {
+  --principal1: #e5989b;
+  --principal2: #a5e1ad;
+  --background1: #fff8fa;
+  --background2: #fceef1;
+  --background3: #ffdce4;
+  --background4: #ffd6e0;
+
   --foreground1: #000000;
   --foreground2: #090d21;
   --shadow: rgb(0, 0, 0, 0.1);
@@ -16,13 +42,13 @@
   --principal2: #a5e1ad;
   --background1: #1D1F21;
   --background2: #17181a;
-  --background-hover: #121314;
-  --foreground1: white;
+  --background3: #121314;
+  --background4: #060607;
+
+  --foreground1: #f3f3f3;
   --foreground2: white;
   --shadow: rgb(0, 0, 0, 0.2);
 }
-
-
 
 
 html,

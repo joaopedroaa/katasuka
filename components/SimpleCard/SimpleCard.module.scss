@@ -1,3 +1,9 @@
+.cardOk {
+  border-bottom: 8px solid var(--principal2);
+}
+.cardNotFound {
+  border-bottom: 8px solid var(--principal1);
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -11,61 +17,59 @@
   // border: 1px solid #eaeaea;
   border-radius: 0;
   width: 300px;
+  color: var(--foreground1);
+
+  .cardInfos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 110px;
+    padding: 10px;
+    background-color: var(--background2);
+  }
 
 
+  &:hover .cardInfos,
+  &:focus .cardInfos,
+  &:active .cardInfos {
+    filter: brightness(85%);
+
+    // color: #e7a2a5;
+
+    // color: red;
+    // border-color: red;
+    // background-color: e5989b;
+    // transform: translate(1);
+    //  transform: translateY(-6px);
+    // transition: 0.2s ease;
+    // box-shadow: 0 6px 6px rgba(0, 0, 0, 0.4);
+    // opacity: 0.6;
+    // transform: rotatex(7deg) translatey(-6px) scale(1.05);
+  }
+
+  h2 {
+    margin: 0 0 0 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .Image {
+    height: 400px;
+    // border-radius: 100px;
+
+    // margin: 1900px;
+  }
 }
 
+.card
+.cardInfos:hover {
+  // background-color: red;
 
-
-.cardok {
-  border-bottom: 8px solid var(--principal2);
-}
-.cardnotfound {
-  border-bottom: 8px solid var(--principal1);
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  background-color: var(--background-hover);
-  // color: #e7a2a5;
-
-
-  // color: red;
-  // border-color: red;
-// background-color: e5989b;
-  // transform: translate(1);
-  //  transform: translateY(-6px);
-  // transition: 0.2s ease;
-  // box-shadow: 0 6px 6px rgba(0, 0, 0, 0.4);
-  // opacity: 0.6;
-  // transform: rotatex(7deg) translatey(-6px) scale(1.05);
-}
-
-.card h2 {
-  margin: 0 0 0 0;
-  font-size: 1.2rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.card .Image {
-  height: 400px;
-  // border-radius: 100px;
-
-  // margin: 1900px;
-}
-
-.card .cardInfos {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 110px;
-  padding: 10px;
 }
 
 .card .cardFooter {

@@ -7,7 +7,7 @@ import SteamEffect from '../SteamEffect'
 
 export default function SimpleCard({ id, imageUrl, title, infoRight, infoLeft }) {
   return (
-    <div className={`${styles.card} ${episodes[id] ? styles.cardok : styles.cardnotfound}`}>
+    <div className={`${styles.card} ${episodes[id] ? styles.cardOk : styles.cardNotFound}`}>
       <SteamEffect src={imageUrl}/>
       {/* <img src={imageUrl} alt={title} className={styles.Image} /> */}
       <div className={styles.cardInfos}>

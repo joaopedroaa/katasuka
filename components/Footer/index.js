@@ -10,8 +10,11 @@ export default function Footer() {
 
       <div className={styles.themes}>
         <select>
-          <option onClick={() => setTheme('light')}>Light</option>
-          <option onClick={() => setTheme('dark')}>Dark</option>
+          <option onClick={() => setTheme('light')}>Aether</option>
+          <option onClick={() => setTheme('dark')}>Erebus</option>
+          <option onClick={() => setTheme('light-blue')}>Proteus</option>
+          <option onClick={() => setTheme('light-pink')}>Chloris</option>
+          {/* <option onClick={() => setTheme('light')}>Phoebe</option> */}
         </select>
       </div>
     </footer>
