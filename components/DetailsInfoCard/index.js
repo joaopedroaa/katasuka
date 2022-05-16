@@ -34,23 +34,29 @@ export default function DetailsInfoCard({ slug, anime }) {
 
       <div className={styles.infoCardText}>
         <div className={styles.infoCardTextHeader}>
-          <div className="">
+          <div >
+            <p className={styles.demographics}>{anime.demographics && anime.demographics.map((demographic) => <span key={demographic.name}>{demographic.name}</span>) }</p>
             <h1 className={styles.title}> {anime.title} </h1>
-            <h2 className={styles.year}>{anime.year} </h2>
+            <h2 className={styles.year}>{anime.season} {anime.year} </h2>
           </div>
-          {!episodes[anime.mal_id] && <CharactersGrid slug={slug} id={anime.mal_id} />}
+          <div >
+            {!episodes[anime.mal_id] && <CharactersGrid slug={slug} id={anime.mal_id} />}
+          </div>
         </div>
 
         <p className={styles.synopsis}>{synopsisResume(anime.synopsis, 1000)}</p>
 
-        <div className={styles.genre}>
-          {anime.genres.map((genre) => {
-            return (
-              <a key={genre.mal_id} href={genre.url}>
-                <span >{genre.name}</span>
-              </a>
-            )
-          })}
+
+        <div className={styles.spaceBetween}>
+          <div className={styles.genre}>
+            {anime.genres.map((genre) => {
+              return (
+                <a key={genre.mal_id} href={genre.url}>
+                  <span >{genre.name}</span>
+                </a>
+              )
+            })}
+          </div>
         </div>
       </div>
     </div>

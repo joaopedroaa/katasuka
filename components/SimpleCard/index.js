@@ -12,7 +12,7 @@ export default function SimpleCard({ id, imageUrl, title, rating, infoRight, inf
         <SteamEffect src={imageUrl} />
         <p lassName={styles.rating}>{rating}</p>
       </div>
-      {/* <img src={imageUrl} alt={title} className={styles.Image} /> */}
+
 
       <div className={`${styles.cardInfos} ${infoRight || infoLeft ? styles.cardInfosDetails : styles.cardInfosOnlyName}`}>
         <h2>{synopsisResume(title, 53)}</h2>

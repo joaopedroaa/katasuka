@@ -18,7 +18,7 @@ export default function PageGrid({ url }) {
 
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Katasuka</title>
         <meta name="description" content="Katasuka" />
@@ -66,6 +66,6 @@ export default function PageGrid({ url }) {
 
       </main>
       <Footer />
-    </div>
+    </>
   )
 }

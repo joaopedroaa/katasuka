@@ -7,7 +7,7 @@ import styles from './EpisodesList.module.scss'
 
 import EpisodesListSkeleton from "../EpisodesListSkeleton"
 
-const EpisodesList = ({ id }) => {
+const EpisodesList = ({ id, duration }) => {
   const { stats, loading, error } = useStats(`https://api.jikan.moe/v4/anime/${id}/episodes`);
   if (error) return <p>Error...</p>;
   if (loading) return (
@@ -25,7 +25,7 @@ const EpisodesList = ({ id }) => {
       <ul className={styles.ulEpisodes}>
         {stats.data && stats.data.map((anime) => (
           <a href={episodesUrl + anime.mal_id + ".mp4"} key={anime.mal_id} target="_blank" rel="noreferrer" className={styles.liEpisodes} >
-            {anime.mal_id} - {anime.title}
+            <span>{anime.mal_id} - {anime.title} </span>  <span>{duration}</span>
           </a>
         ))}
 
@@ -40,7 +40,7 @@ const EpisodesList = ({ id }) => {
   return (
     <>
       <ul className={styles.ulEpisodes}>
-      <h1>dwuhdu dw</h1>
+        <h1>dwuhdu dw</h1>
         {stats.data.map((anime) => (
           <a key={anime.mal_id} target="_blank" rel="noreferrer" className={styles.liEpisodes} >
             {anime.mal_id} - {anime.title}

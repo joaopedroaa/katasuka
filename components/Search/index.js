@@ -18,7 +18,7 @@ export default function Anime() {
   const [searchUrl, setSearchUrl] = useState();
   // console.log(searchUrl)
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Katasuka</title>
         <meta name="description" content="Katasuka" />

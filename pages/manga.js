@@ -9,7 +9,7 @@ import Footer from "../components/Footer"
 export default function Manga() {
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Katasuka</title>
         <meta name="description" content="Katasuka" />
@@ -31,6 +31,6 @@ export default function Manga() {
       </main>
 
       <Footer/>
-    </div>
+    </>
   )
 }

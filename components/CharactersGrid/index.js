@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -21,18 +22,16 @@ export default function CharactersGrid({ id, slug }) {
   if (error) return <p>Error...</p>;
 
   return (
-    <div className={styles.container}>
+    <div>
       <div className={styles.section}>
-        {stats.data.map((char) => {
+        {stats.data.slice(0, 4).map((char) => {
           const character = char.character
-          if (char.role == "Main") {
             return (
               <a href={character.url} className={styles.grid} key={character.name} >
                 <img src={character.images.webp.image_url} alt={character.name} />
                 <p>{character.name} </p>
               </a>
             )
-          }
         })}
       </div>
     </div>

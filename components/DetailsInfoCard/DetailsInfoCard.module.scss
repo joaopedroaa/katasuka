@@ -18,6 +18,7 @@
   width: 95vw;
   margin: auto;
 
+
   transition: 0.5s;
   &:hover{
     box-shadow: 0 4px 40px var(--shadow);
@@ -54,7 +55,9 @@
     .infoCardTextHeader {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
+
+
     }
 
     .title {
@@ -62,9 +65,12 @@
       justify-content: space-between;
       margin: 0;
       font-size: 2.4rem;
-      width: 500px;
+      width: 600px;
     }
 
+    .demographics{
+      margin: 0;
+    }
     .score {
       font-size: 2rem;
     }
@@ -104,4 +110,11 @@
 
     }
   }
+}
+
+
+.spaceBetween{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

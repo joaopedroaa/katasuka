@@ -11,3 +11,48 @@
   margin: auto;
   overflow: hidden;
 }
+
+
+.mainContainer{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  max-width: 95vw;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.mainContainerEpisodes{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+.sidebar{
+  text-align: left;
+  margin: 0;
+  margin-left: auto;
+  padding: 20px;
+  width: 100%;
+  // margin-right: 0;
+  background-color: var(--background2);
+  // border: 1px solid var(--shadow);
+
+  h3{
+    color: var(--principal1);
+    margin: 0;
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  p{
+    color: var(--foreground1);
+    margin: 0;
+    margin-top: 4px;
+    font-size: 1rem;
+  }
+
+  .videoIframe {
+    width: 1000px;
+  }
+}

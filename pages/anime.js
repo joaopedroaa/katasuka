@@ -18,7 +18,7 @@ export default function Anime() {
   const [searchUrl, setSearchUrl] = useState();
   const handleChange = nextChecked => { setChecked(nextChecked); };
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Katasuka</title>
         <meta name="description" content="Katasuka" />
@@ -89,6 +89,6 @@ export default function Anime() {
 
       </main>
       <Footer />
-    </div>
+    </>
   )
 }

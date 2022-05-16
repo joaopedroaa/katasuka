@@ -28,11 +28,9 @@ export default function MangaDetails({ anime }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className={styles.container}>
+      <div>
 
         <DetailsInfoCard slug="manga" anime={anime} />
-
-
 
         <div className={stylesHome.section}>
           <h2 className={stylesHome.subtitle}>Recommendations</h2>
