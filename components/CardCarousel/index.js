@@ -52,21 +52,14 @@ const CardCarousel = ({ url, filterAnime, slug, opt }) => {
         <div className={styles.embla__container}>
           {stats.data.map((anime) => {
             if (opt == "recomend") anime = anime.entry
-
-
-
-
-            if (!episodes[anime.mal_id] && filterAnime) return (
-              <></>
-            )
+            if (!episodes[anime.mal_id] && filterAnime) return (<></>)
 
             return (
               <div key={anime.mal_id} className={styles.gridSlide}  >
-                {console.log(anime.mal_id)}
                 <Link href={`/${slug}/${anime.mal_id}`}  >
                   <a>
-                    {opt == "recomend" && <SimpleCard mal_id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={` votes`} />}
-                    {opt == "default" && <SimpleCard mal_id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={anime.score} infoLeft={anime.episodes} filterAnime={filterAnime} />}
+                    {opt == "recomend" && <SimpleCard id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={` votes`} />}
+                    {opt == "default" && <SimpleCard id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={anime.score} infoLeft={anime.episodes} filterAnime={filterAnime} />}
                   </a>
                 </Link>
               </div>

@@ -9,11 +9,11 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Search from "../components/Search"
 import Switch from "react-switch";
+
+
 export default function Anime() {
   const [filterAnime, setChecked] = useState(false);
-  const handleChange = nextChecked => {
-    setChecked(nextChecked);
-  };
+  const handleChange = nextChecked => {setChecked(nextChecked);};
 
   return (
     <div className={styles.container}>

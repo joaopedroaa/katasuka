@@ -5,10 +5,9 @@ import synopsisResume from "../../utils/synopsisResume"
 import SteamEffect from '../SteamEffect'
 
 
-export default function SimpleCard({ mal_id, imageUrl, title, infoRight, infoLeft }) {
-
+export default function SimpleCard({ id, imageUrl, title, infoRight, infoLeft }) {
   return (
-    <div className={`${styles.card} ${episodes[mal_id] ? styles.cardok : styles.cardnotfound}`}>
+    <div className={`${styles.card} ${episodes[id] ? styles.cardok : styles.cardnotfound}`}>
       <SteamEffect src={imageUrl}/>
       {/* <img src={imageUrl} alt={title} className={styles.Image} /> */}
       <div className={styles.cardInfos}>
