@@ -1,6 +1,6 @@
 import Head from 'next/head'
+import Link from 'next/link';
 import styles from '../styles/AnimeHome.module.scss'
-
 import CardCarousel from "../components/CardCarousel"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -21,7 +21,10 @@ export default function Manga() {
         <h1 className={styles.title}>Katasuka</h1>
 
         <div className={styles.section}>
-          <h1>Top Mangas</h1>
+
+          <Link href="/manga/top">
+            <h2 className={styles.subtitle}>Top Mangas</h2>
+          </Link>
           <CardCarousel opt="manga" url='https://api.jikan.moe/v4/top/manga' />
         </div>
 

@@ -7,4 +7,6 @@ import PageGrid from "../../components/PageGrid"
 
 export default function AnimeTop() {
   return (<PageGrid url="https://api.jikan.moe/v4/top/anime" />)
+
 }
+

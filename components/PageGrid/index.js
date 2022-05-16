@@ -5,12 +5,9 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import CardGrid from "../../components/CardGrid"
 
-export default function AnimeTop({ url}) {
+export default function AnimeTop({ url }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [pages, setPages] = useState([1]);
-
-  console.log("currentPage: ", currentPage);
-  console.log("pages: ", pages);
 
   return (
     <div className={styles.container}>

@@ -3,10 +3,12 @@ import Head from 'next/head'
 
 import styles from '../../styles/AnimeDetails.module.scss'
 import synopsisResume from "../../utils/synopsisResume"
+import episodes from "../../utils/episodes"
 
 import Header from "../../components/Header"
+import Footer from "../../components/Footer"
 import SteamEffect from "../../components/SteamEffect"
-import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
+import CardCarousel from "../../components/CardCarousel"
 import EpisodesList from "../../components/EpisodesList"
 import CharactersGrid from "../../components/CharactersGrid"
 
@@ -22,7 +24,7 @@ export const getServerSideProps = async (context) => {
 
 
 export default function AnimeDetails({ anime }) {
-  console.log(synopsisResume)
+
   return (
     <>
       <Head>
@@ -43,33 +45,32 @@ export default function AnimeDetails({ anime }) {
                 <h1 className={styles.title}> {anime.title} </h1>
                 <h2 className={styles.year}>{anime.year} </h2>
               </div>
-              <CharactersGrid id={anime.mal_id} />
+              {!episodes[anime.mal_id] && <CharactersGrid id={anime.mal_id} />}
             </div>
 
             <p className={styles.synopsis}>{synopsisResume(anime.synopsis, 1000)}</p>
 
             <div className={styles.genre}>
-              {anime.genres.map((genre) => (
-                <a key={genre.mal_id} href={genre.url}>
-                  <span >{genre.name}</span>
-                </a>
-              ))}
+              {anime.genres.map((genre) => {
+                return (
+                  <a key={genre.mal_id} href={genre.url}>
+                    <span >{genre.name}</span>
+                  </a>
+                )
+              })}
             </div>
 
           </div>
         </div>
 
-        <main className={styles.main}>
+        {episodes[anime.mal_id] &&
+          <main className={styles.main}>
+            <EpisodesList id={anime.mal_id} />
+          </main>}
 
-        </main>
-
-        {/* <main className={styles.main}>
-          <EpisodesList id={anime.mal_id} />
-        </main> */}
 
         <div className={styles.recommendation}>
-          <CardCarouselRecommendation opt="anime" url={`https://api.jikan.moe/v4/anime/${anime.mal_id}/recommendations`} />
-
+          <CardCarousel opt="recommendation" url={`https://api.jikan.moe/v4/anime/${anime.mal_id}/recommendations`} />
         </div>
       </div>
 

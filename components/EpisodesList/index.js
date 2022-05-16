@@ -28,7 +28,7 @@ const EpisodesList = ({ id }) => {
             {anime.mal_id} - {anime.title}
           </a>
         ))}
-        {console.log(stats.data.length == 0)}
+
         {stats.data.length == 0 &&
           <a href={episodesUrl + "1.mp4"}target="_blank" rel="noreferrer" className={styles.liEpisodes} >
             1 - Watch

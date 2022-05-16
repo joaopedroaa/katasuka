@@ -3,8 +3,7 @@ import styles from './CardGrid.module.scss'
 import CardCarousel from "../../components/CardCarousel"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
-import SimpleCardAnime from "../../components/SimpleCardAnime"
-import SimpleCardManga from "../../components/SimpleCardManga"
+import SimpleCard from "../../components/SimpleCard"
 import SimpleCardSkeleton from "../../components/SimpleCardSkeleton"
 import Link from 'next/link'
 import useStats from "../../utils/useStats"
@@ -40,8 +39,8 @@ export default function CardGrid({ opt, url }) {
           <div className={styles.grid} key={anime.mal_id} >
             <Link href={`/${opt}/${anime.mal_id}`}  >
               <a>
-                {opt == "anime" && <SimpleCardAnime id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
-                {opt == "manga" && <SimpleCardManga id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
+                {opt == "anime" && <SimpleCard id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
+                {opt == "manga" && <SimpleCard id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
               </a>
             </Link>
           </div>

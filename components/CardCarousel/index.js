@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from 'next/link';
 import useEmblaCarousel from "embla-carousel-react";
-import SimpleCardAnime from "../SimpleCardAnime"
-import SimpleCardManga from "../SimpleCardManga"
+import SimpleCard from "../SimpleCard"
+
 import useStats from "../../utils/useStats"
 import styles from './CardCarousel.module.scss'
 import CardCarouselSkeleton from "../CardCarouselSkeleton"
@@ -41,7 +41,7 @@ const CardCarousel = ({ url, opt }) => {
     emblaApi.on("select", onSelect);
   }, [emblaApi, setScrollSnaps, onSelect]);
 
-  if (loading) return <CardCarouselSkeleton/>;
+  if (loading) return <CardCarouselSkeleton />;
   if (error) return <p>Error...</p>;
 
   // return <CardCarouselSkeleton/>;
@@ -50,16 +50,20 @@ const CardCarousel = ({ url, opt }) => {
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
-          {stats.data.map((anime) => (
-            <div className={styles.gridSlide} key={anime.mal_id} >
-              <Link href={`/${opt}/${anime.mal_id}`}  >
-                <a>
-                  {opt == "anime" && <SimpleCardAnime id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
-                  {opt == "manga" && <SimpleCardManga id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} score={anime.score} year={anime.year} />}
-                </a>
-              </Link>
-            </div>
-          ))}
+          {stats.data.map((anime) => {
+            return (
+              <div key={anime.mal_id} className={styles.gridSlide}  >
+                <Link href={`/${opt}/${anime.mal_id}`}  >
+                  <a>
+
+                    {opt == "anime" && <SimpleCard mal_id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={anime.score} infoLeft={anime.episodes} />}
+                    {opt == "manga" && <SimpleCard mal_id={anime.mal_id} imageUrl={anime.images.webp.large_image_url} title={anime.title} infoRight={anime.score} infoLeft={anime.chapters} />}
+                    {opt == "recommendation" && <SimpleCard mal_id={anime.entry.mal_id} imageUrl={anime.entry.images.webp.large_image_url} title={anime.entry.title} infoRight={`${anime.votes} votes`} />}
+                  </a>
+                </Link>
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>

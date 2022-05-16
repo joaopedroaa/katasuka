@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../../styles/AnimeDetails.module.scss'
 
-import CardCarouselRecommendation from "../../components/CardCarouselRecommendation"
+import CardCarousel from "../../components/CardCarousel"
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
@@ -48,7 +48,7 @@ export default function MangaDetails({ anime }) {
         </div>
         <div className={styles.recommendation}>
           <h1>Recommendations</h1>
-          <CardCarouselRecommendation opt="manga" url={`https://api.jikan.moe/v4/manga/${anime.mal_id}/recommendations`} />
+          <CardCarousel opt="recommendation" url={`https://api.jikan.moe/v4/manga/${anime.mal_id}/recommendations`} />
         </div>
       </div>
       {/* <Footer/> */}
