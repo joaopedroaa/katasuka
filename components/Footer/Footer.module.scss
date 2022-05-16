@@ -1,19 +1,24 @@
-
 .footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+
+  padding: 1.4rem ;
+  border-top: 1px solid var(--background2);
+  margin-top: 40px;
 
 
-  padding: 1.4rem 0;
-  border-top: 1px solid #eaeaea;
-  margin-top: 140px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
 
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  .themes {
+    select {
+      font-size: 1rem;
+    }
+  }
 }

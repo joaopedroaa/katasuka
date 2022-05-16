@@ -3,10 +3,10 @@
 
   list-style: none;
   margin-top: 100px;
-  max-width: 85vw;
+  max-width: 90vw;
   padding: 0;
 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--background2);
 
 }
 
@@ -14,14 +14,15 @@
 .liEpisodes{
   display: block;
   list-style: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  background-color: var(--background1);
+  border-top: 1px solid var(--background2);
+  padding: 24px;
   // margin: 10px;
 
 }
 .liEpisodes:hover{
   list-style: none;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--background2);
 
   // margin: 10px;
 

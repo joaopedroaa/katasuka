@@ -16,7 +16,7 @@ export default function Anime() {
   const [type, setType] = useState();
 
   const [searchUrl, setSearchUrl] = useState();
-
+  console.log(searchUrl)
   return (
     <div className={styles.container}>
       <Head>
@@ -31,7 +31,7 @@ export default function Anime() {
           <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/anime?q=${search}`) }} className={styles.searchButton}>Search</button>
         </div>
 
-        {searchUrl && <CardCarousel slug="anime" url={searchUrl} />}
+        {searchUrl && <CardCarousel slug="anime" opt="default" url={searchUrl} />}
       </main>
 
     </div>

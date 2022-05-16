@@ -4,6 +4,7 @@ import styles from './Header.module.scss';
 
 export default function Header() {
   return (
+    <>
     <header className={styles.header}>
       <input
         className={styles.controlNavCheckbox}
@@ -18,5 +19,8 @@ export default function Header() {
         <Link href="/manga">Manga</Link>
       </nav>
     </header>
+
+
+    </>
   );
 }

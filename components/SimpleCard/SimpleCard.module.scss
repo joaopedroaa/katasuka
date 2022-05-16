@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: var(--background2);
   margin: 1rem 0.4rem;
 
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  // border: 1px solid #eaeaea;
   border-radius: 0;
   width: 300px;
 
@@ -18,16 +18,16 @@
 
 
 .cardok {
-  border-bottom: 8px solid #a5e1ad;
+  border-bottom: 8px solid var(--principal2);
 }
 .cardnotfound {
-  border-bottom: 8px solid #e5989b;
+  border-bottom: 8px solid var(--principal1);
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  background-color: #f1f1f1;
+  background-color: var(--background-hover);
   // color: #e7a2a5;
 
 

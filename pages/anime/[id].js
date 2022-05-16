@@ -35,11 +35,11 @@ export default function AnimeDetails({ anime }) {
         <meta name="description" content={anime.synopsis} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
 
       <div className={styles.container}>
+        <Header />
 
-        <DetailsInfoCard slug="anime" anime={anime }/>
+        <DetailsInfoCard slug="anime" anime={anime} />
 
 
 
@@ -52,9 +52,10 @@ export default function AnimeDetails({ anime }) {
           <h2 className={stylesHome.subtitle}>Recommendations</h2>
           <CardCarousel slug="anime" opt="recomend" url={`https://api.jikan.moe/v4/anime/${anime.mal_id}/recommendations`} />
         </div>
+
+        <Footer />
       </div>
 
-      {/* <Footer /> */}
 
     </>
   )

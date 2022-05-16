@@ -30,7 +30,6 @@ export default function Anime() {
         </h1>
 
 
-        <div className={styles.section}>
           <Switch
             onChange={handleChange}
             checked={filterAnime}
@@ -46,7 +45,7 @@ export default function Anime() {
             width={48}
             id="material-switch"
           />
-        </div>
+
 
         <div className={styles.section}>
           <Search />

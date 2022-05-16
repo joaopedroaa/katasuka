@@ -8,9 +8,9 @@ const SimpleCardSkeleton = props => (
     width={300}
     height={522}
     viewBox="0 0 300 522"
-    backgroundColor="#f3f3f3"
-    foregroundColor="#ecebeb"
-  className={styles.SimpleCardSkeleton}
+    backgroundColor="var(--background2)"
+    foregroundColor="var(--background-hover)"
+    className={styles.SimpleCardSkeleton}
     {...props}
   >
     <rect x="4" y="-1" rx="0" ry="0" width="297" height="400" />
