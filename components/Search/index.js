@@ -16,7 +16,7 @@ export default function Anime() {
   const [type, setType] = useState();
 
   const [searchUrl, setSearchUrl] = useState();
-  console.log(searchUrl)
+  // console.log(searchUrl)
   return (
     <div className={styles.container}>
       <Head>

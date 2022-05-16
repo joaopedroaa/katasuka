@@ -71,6 +71,8 @@
     margin-bottom: 0;
     color: var(--foreground1);
     margin-left: 2rem;
+    cursor: pointer;
+
   }
 
   .subtitleLink::after {
@@ -103,6 +105,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  height: 30vh;
 }
 
 .loadMoreButton {
@@ -112,4 +116,31 @@
   border: none;
   background-color: var(--foreground2);
   color: var(--background1);
+}
+
+
+.headerSearch{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // gap: 20px;
+
+
+  width: 95vw;
+
+
+  // background-color: red;
+  .headerSearchLeft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+  }
+
+
+  .headerSearchRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+  }
 }

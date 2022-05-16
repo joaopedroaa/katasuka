@@ -12,11 +12,11 @@ const EpisodesList = ({ id }) => {
   if (error) return <p>Error...</p>;
   if (loading) return (
     <ul className={styles.ulEpisodes}>
-      <EpisodesListSkeleton/>
-      <EpisodesListSkeleton/>
-      <EpisodesListSkeleton/>
-      <EpisodesListSkeleton/>
-      <EpisodesListSkeleton/>
+      <EpisodesListSkeleton />
+      <EpisodesListSkeleton />
+      <EpisodesListSkeleton />
+      <EpisodesListSkeleton />
+      <EpisodesListSkeleton />
     </ul>
   );
   if (episodes[id]) {
@@ -30,7 +30,7 @@ const EpisodesList = ({ id }) => {
         ))}
 
         {stats.data.length == 0 &&
-          <a href={episodesUrl + "1.mp4"}target="_blank" rel="noreferrer" className={styles.liEpisodes} >
+          <a href={episodesUrl + "1.mp4"} target="_blank" rel="noreferrer" className={styles.liEpisodes} >
             1 - Watch
           </a>}
       </ul>
@@ -38,13 +38,16 @@ const EpisodesList = ({ id }) => {
   }
 
   return (
-    <ul className={styles.ulEpisodes}>
-      {stats.data.map((anime) => (
-        <a key={anime.mal_id} target="_blank" rel="noreferrer" className={styles.liEpisodes} >
-          {anime.mal_id} - {anime.title}
-        </a>
-      ))}
-    </ul>
+    <>
+      <ul className={styles.ulEpisodes}>
+      <h1>dwuhdu dw</h1>
+        {stats.data.map((anime) => (
+          <a key={anime.mal_id} target="_blank" rel="noreferrer" className={styles.liEpisodes} >
+            {anime.mal_id} - {anime.title}
+          </a>
+        ))}
+      </ul>
+    </>
   )
 
 

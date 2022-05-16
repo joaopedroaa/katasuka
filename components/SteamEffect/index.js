@@ -9,11 +9,10 @@ const card = ({ src }) => {
   }
 
   return (
-    <div className={styles.gamecontainer}>
-      <div className={styles.gamecard}>
-        <div className={styles.gamecardcover} style={sectionStyle}></div>
-      </div>
+    <div className={styles.gamecard}>
+      <div className={styles.gamecardcover} style={sectionStyle}></div>
     </div>
+
   )
 }
 
