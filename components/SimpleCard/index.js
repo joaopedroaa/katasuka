@@ -12,11 +12,10 @@ export default function SimpleCard({ id, slug, imageUrl, title, rating, infoRigh
         styles.cardOk :
         styles.cardNotFound}`
     }>
+      {/* <p className={styles.rating}>{rating}</p> */}
       <div className={styles.cardImage}>
         <SteamEffect src={imageUrl} />
-        <p lassName={styles.rating}>{rating}</p>
       </div>
-
 
       <div className={`${styles.cardInfos} ${infoRight || infoLeft || slug == "manga" ? styles.cardInfosDetails : styles.cardInfosOnlyName}`}>
         <h2>{synopsisResume(title, 53)}</h2>

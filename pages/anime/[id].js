@@ -33,7 +33,7 @@ export default function AnimeDetails({ anime }) {
   const fromDateString = `${fromDate.day}/${fromDate.month}/${fromDate.year}`
   const toDateString = `${toDate.day}/${toDate.month}/${toDate.year}`
 
-  console.log()
+
   return (
     <>
       <Head>

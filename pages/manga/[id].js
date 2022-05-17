@@ -25,17 +25,15 @@ export const getServerSideProps = async (context) => {
 export default function MangaDetails({ anime }) {
   const fromDate = anime.published.prop.from
   const toDate = anime.published.prop.to
-
   const fromDateString = `${fromDate.day}/${fromDate.month}/${fromDate.year}`
   const toDateString = `${toDate.day}/${toDate.month}/${toDate.year}`
 
+  const newTitle = anime.title.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '')
+  const urlManga = `https://unionleitor.top/leitor/${newTitle}/01`
+
 
   const [full, setFull] = useState(false);
-  // const [search, setSearch] = useState();
-  const displayFull = {
-    display: full ? "none" : "block",
-
-  };
+  const displayFull = { display: full ? "none" : "block" };
 
 
   return (
@@ -54,10 +52,10 @@ export default function MangaDetails({ anime }) {
         <div style={displayFull}>
           <DetailsInfoCard slug="manga" anime={anime} />
         </div>
-        {console.log(anime.title)}
+
         <main className={`${full ? styles.mainContainerFull : styles.mainContainer}`}>
           <div className={styles.iframeSection}>
-            <iframe className={`${styles.iframeManga} ${full ? styles.iframeMangaFull : styles.iframeMangaNormal}`} src={`https://unionleitor.top/leitor/${anime.title}/01`} frameBorder="0"></iframe>
+            <iframe className={`${styles.iframeManga} ${full ? styles.iframeMangaFull : styles.iframeMangaNormal}`} src={urlManga} frameBorder="0"></iframe>
             <button className={`${styles.iframeMangaButton} ${full ? styles.iframeMangaButtonFull : styles.iframeMangaButtonNormal}`} onClick={() => { setFull(!full) }}>Full Screan</button>
           </div>
 
@@ -144,8 +142,8 @@ export default function MangaDetails({ anime }) {
         <div style={displayFull} className={stylesHome.section}>
           <h2 className={stylesHome.subtitle}>Recommendations</h2>
           <CardCarousel slug="manga" opt="recomend" url={`https://api.jikan.moe/v4/manga/${anime.mal_id}/recommendations`} />
+          <Footer />
         </div>
-      <Footer/>
       </div>
     </>
   )

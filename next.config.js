@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const withPWA = require('next-pwa')
+const prod = process.env.NODE_ENV === 'production'
 
-module.exports = {
+const settings = {
   async redirects() {
     return [
       {
@@ -13,12 +12,22 @@ module.exports = {
       },
     ]
   },
+  pwa: {
+    disable: prod ? false : true,
+    dest: 'public'
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.md$/,
+      use: 'raw-loader',
+    })
+    return config
+  },
+
   images: {
     domains: ['cdn.myanimelist.net'],
   }
-
 }
 
-
-
+module.exports = withPWA(settings)
 

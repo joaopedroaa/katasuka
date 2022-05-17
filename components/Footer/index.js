@@ -7,8 +7,8 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
 
-      <div className={styles.dmca}><Link href={`/dmca`}>DMCA</Link></div>
-      <div className={styles.warning}>Não hospedamos nenhum vídeo em nosso servidor. O conteudo deste site é provido por terceiros que não possuem qualquer afiliação conosco.</div>
+      <div className={styles.dmca}><Link href={`/about/dmca`}>DMCA</Link></div>
+      <span></span>
       <div className={styles.themes}>
         <select>
           <option onClick={() => setTheme('light')}>Aether</option>
