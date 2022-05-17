@@ -26,7 +26,7 @@ export default function Manga() {
 
           <h1>Legal Disclaimer</h1>
           <p>
-            `he author is not responsible for any contents linked or referred to from his pages - If any damage occurs by the use of information presented there, only the author of the respective pages might be liable, not the one who has linked to these pages. {siteUrl} doesn&apos;t host any content.
+            he author is not responsible for any contents linked or referred to from his pages - If any damage occurs by the use of information presented there, only the author of the respective pages might be liable, not the one who has linked to these pages. {siteUrl} doesn&apos;t host any content.
             <br /><br />
             All {siteUrl} does is link or embed content that was uploaded to popular Online Video hosting sites like Youtube.com / Google Video. All youtube/googlevideo users signed a contract with the sites when they set up their accounts which forces them not to upload illegal content. By clicking on any Links to videos while surfing on {siteUrl} you watch content hosted on third parties and {siteUrl} can&apos;t take the responsibility for any content hosted on other sites.
             <br /><br />

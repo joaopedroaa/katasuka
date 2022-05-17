@@ -14,17 +14,6 @@ import CardCarousel from "../../components/CardCarousel"
 import EpisodesList from "../../components/EpisodesList"
 import CharactersGrid from "../../components/CharactersGrid"
 
-export const getServerSideProps = async (context) => {
-  const { id } = context.query
-  const res = await fetch("https://api.jikan.moe/v4/anime/" + id)
-  const data = await res.json()
-
-  return {
-    props: { anime: data.data },
-  }
-}
-
-
 export default function DetailsInfoCard({ slug, anime }) {
   return (
     <div className={styles.infoCard}>
@@ -44,7 +33,7 @@ export default function DetailsInfoCard({ slug, anime }) {
           </div>
         </div>
 
-        <p className={styles.synopsis}>{synopsisResume(anime.synopsis, 1000)}</p>
+        <p className={styles.synopsis}>{synopsisResume(anime.synopsis || "", 1000)}</p>
 
 
         <div className={styles.spaceBetween}>

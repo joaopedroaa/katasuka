@@ -111,7 +111,6 @@ export default function MangaDetails({ anime }) {
               <p>{anime.title_japanese}</p>
             </>}
 
-
             {anime.title_synonyms.length != 0 && <>
               <h3 >Synonyms</h3>
               {anime.title_synonyms.map((synonym) => <p key={synonym}>{synonym}</p>)}
@@ -123,13 +122,13 @@ export default function MangaDetails({ anime }) {
                 return (<p key={producer.mal_id}>{producer.name}</p>)
               })}
             </>}
+
             {anime.serializations.length != 0 && <>
               <h3>Serializations</h3>
               {anime.serializations.map((producer) => {
                 return (<p key={producer.mal_id}>{producer.name}</p>)
               })}
             </>}
-
 
             {anime.themes.length != 0 && <>
               <h3>Themes</h3>
@@ -143,11 +142,11 @@ export default function MangaDetails({ anime }) {
 
 
         <div style={displayFull} className={stylesHome.section}>
-          <h2 className={stylesHome.subtitle}>Recommendations {full == true ? "true" : "false"}</h2>
+          <h2 className={stylesHome.subtitle}>Recommendations</h2>
           <CardCarousel slug="manga" opt="recomend" url={`https://api.jikan.moe/v4/manga/${anime.mal_id}/recommendations`} />
         </div>
+      <Footer/>
       </div>
-      {/* <Footer/> */}
     </>
   )
 
