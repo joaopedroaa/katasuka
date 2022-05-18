@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import Head from 'next/head'
 import styles from '../../styles/AnimeHome.module.scss'
 
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
+
+import TemplatePage from "../../components/TemplatePage"
 import CardGrid from "../../components/CardGrid"
 
 import Switch from "react-switch";
 
 
-export default function PageGrid({ url }) {
+const PageGrid = ({ name, url }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pages, setPages] = useState([1]);
 
@@ -18,18 +18,9 @@ export default function PageGrid({ url }) {
 
 
   return (
-    <>
-      <Head>
-        <title>Katasuka</title>
-        <meta name="description" content="Katasuka" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Header />
+    <TemplatePage title={`Katasuka - ${name}`} description={"Katasuka"}>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Katasuka
-        </h1>
+        <h1 className={styles.title}>Katasuka</h1>
 
         <div className={styles.section}>
           <Switch
@@ -65,7 +56,8 @@ export default function PageGrid({ url }) {
         </button>
 
       </main>
-      <Footer />
-    </>
+    </TemplatePage>
+
   )
 }
+export default PageGrid

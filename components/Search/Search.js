@@ -1,17 +1,12 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
 import styles from './Search.module.scss'
 
-// import CardCarousel from "../components/CardCarousel"
-// import Header from "../  /components/Header"
-// import Footer from "../components/Footer"
-import CardGrid from "../CardGrid"
 import CardCarousel from "../CardCarousel"
 import { useState, useEffect } from 'react';
 
 
-export default function Anime() {
+const Search = () => {
   const [search, setSearch] = useState();
   const [type, setType] = useState();
 
@@ -37,7 +32,7 @@ export default function Anime() {
     </div>
   )
 }
-
+export default Search
 
 
 

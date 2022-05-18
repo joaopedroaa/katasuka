@@ -1,11 +1,9 @@
-import Image from 'next/image'
 import styles from './SimpleCard.module.scss'
 import episodes from "../../data/episodes"
 import synopsisResume from "../../utils/synopsisResume"
 import SteamEffect from '../SteamEffect'
 
-
-export default function SimpleCard({ id, slug, imageUrl, title, rating, infoRight, infoLeft }) {
+const SimpleCard = ({ id, slug, imageUrl, title, rating, infoRight, infoLeft }) => {
   return (
     <div className={`${styles.card}
       ${episodes[id] || slug == "manga" ?
@@ -27,3 +25,4 @@ export default function SimpleCard({ id, slug, imageUrl, title, rating, infoRigh
     </div>
   )
 }
+export default SimpleCard

@@ -11,10 +11,8 @@ import { useState, useEffect } from 'react';
 
 export const getServerSideProps = async (context) => {
   const { id } = context.query
-
   const res = await fetch("https://api.jikan.moe/v4/manga/" + id)
   const data = await res.json()
-
 
   return {
     props: { anime: data.data },
@@ -22,7 +20,7 @@ export const getServerSideProps = async (context) => {
 }
 
 
-export default function MangaDetails({ anime }) {
+const MangaDetails = ({ anime }) => {
   const fromDate = anime.published.prop.from
   const toDate = anime.published.prop.to
   const fromDateString = `${fromDate.day}/${fromDate.month}/${fromDate.year}`
@@ -147,7 +145,5 @@ export default function MangaDetails({ anime }) {
       </div>
     </>
   )
-
-
-
 }
+export default MangaDetails

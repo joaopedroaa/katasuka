@@ -2,8 +2,7 @@
 import Link from 'next/link';
 import styles from './Header.module.scss';
 
-export default function Header({ children }) {
-  // console.log(children)
+const Header = ({ children }) => {
   return (
     <>
       <header className={styles.header}>
@@ -26,3 +25,4 @@ export default function Header({ children }) {
     </>
   );
 }
+export default Header

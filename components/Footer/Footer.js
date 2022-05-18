@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import ThemeChanger from '../ThemeChanger'
 
-export default function Footer() {
+const Footer = () => {
   const { theme, setTheme } = useTheme()
   return (
     <footer className={styles.footer}>
@@ -15,3 +15,4 @@ export default function Footer() {
     </footer>
   )
 }
+export default Footer

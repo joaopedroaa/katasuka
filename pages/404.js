@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import styles from '../styles/AnimeHome.module.scss'
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import TemplatePage from "../components/TemplatePage"
 
-export default function FourOhFour() {
-  return <>
-    <Header />
-    <div className={styles.FourOhFour}>
-      <h1>Not Found  ¯\_(ツ)_/¯</h1>
-    </div>
-    <Footer />
-  </>
+const FourOhFour = () => {
+  return (
+    <TemplatePage title="Katasuka - 404" description="Katasuka">
+      <div className={styles.FourOhFour}>
+        <h1>Not Found  ¯\_(ツ)_/¯</h1>
+      </div>
+    </TemplatePage>
+  )
+
+
 }
+export default FourOhFour

@@ -59,7 +59,7 @@ export async function getStaticProps({ ...ctx }) {
 }
 
 
-export default function markdownTemplate({ frontmatter, markdownBody, siteTitle }) {
+const markdownTemplate = ({ frontmatter, markdownBody, siteTitle }) => {
   const siteUrl = "katasuka.vercel.app"
   return (
     <>
@@ -82,6 +82,6 @@ export default function markdownTemplate({ frontmatter, markdownBody, siteTitle 
     </>
   )
 }
-
+export default markdownTemplate
 
 

@@ -1,17 +1,11 @@
-import Head from 'next/head'
-import styles from './CardGrid.module.scss'
-import CardCarousel from "../../components/CardCarousel"
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
-import SimpleCard from "../../components/SimpleCard"
-import SimpleCardSkeleton from "../../components/SimpleCard/SimpleCardSkeleton"
 import Link from 'next/link'
 import useStats from "../../utils/useStats"
 import episodes from "../../data/episodes"
+import SimpleCard from "../../components/SimpleCard"
+import SimpleCardSkeleton from "../../components/SimpleCard/SimpleCardSkeleton"
 
 
-export default function CardGrid({ opt, url, filterAnime }) {
-
+const CardGrid = ({ opt, url, filterAnime }) => {
   const { stats, loading, error } = useStats(url);
 
   if (error) return <p>Error...</p>;
@@ -51,3 +45,4 @@ export default function CardGrid({ opt, url, filterAnime }) {
 
   )
 }
+export default CardGrid

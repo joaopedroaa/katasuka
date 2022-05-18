@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function UseStats(url, rapidapiHost, rapidapiKey) {
+const UseStats = (url, rapidapiHost, rapidapiKey) => {
   const [stats, setStats] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
@@ -37,3 +37,4 @@ export default function UseStats(url, rapidapiHost, rapidapiKey) {
     error,
   };
 }
+export default UseStats

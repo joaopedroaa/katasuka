@@ -32,7 +32,6 @@
     transform: translatey(0%);
   }
 
-
   &:before {
     display: block;
     content: "";
@@ -40,20 +39,18 @@
     top: 5%;
     left: 5%;
     width: 90%;
-    height: 90%;
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.2);
+    height: 91%;
+    background: var(--background3);
+    box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
     will-change: skewx(0.001deg);
     transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.35s;
   }
+
   &:hover:before {
     opacity: 0.6;
     transform: rotatex(7deg) translatey(-6px) scale(1.05);
   }
 }
-
-
-
 
 .gamecardcover {
   position: absolute;

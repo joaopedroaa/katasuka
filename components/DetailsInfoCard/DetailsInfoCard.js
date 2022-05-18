@@ -12,7 +12,9 @@ import Footer from "../../components/Footer"
 import SteamEffect from "../../components/SteamEffect"
 import CharactersGrid from "../../components/CharactersGrid"
 
-export default function DetailsInfoCard({ slug, anime }) {
+
+
+const DetailsInfoCard = ({ slug, anime }) => {
   return (
     <div className={styles.infoCard}>
       <div className={styles.infoCardImage}>
@@ -50,3 +52,4 @@ export default function DetailsInfoCard({ slug, anime }) {
 
   )
 }
+export default DetailsInfoCard

@@ -1,7 +1,4 @@
-import React from 'react'
-import ContentLoader from 'react-content-loader'
 import styles from './steamEffect.module.scss'
-
 
 const card = ({ src }) => {
   var sectionStyle = {

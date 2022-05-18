@@ -6,46 +6,22 @@ import styles from '../styles/AnimeHome.module.scss'
 import stylesSearch from '../components/Search/Search.module.scss'
 
 import CardCarousel from "../components/CardCarousel"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import TemplatePage from "../components/TemplatePage"
 import Switch from "react-switch";
 
 
-export default function Manga() {
+const MangaPage = () => {
   const [filterAnime, setChecked] = useState(false);
   const [search, setSearch] = useState();
   const [searchUrl, setSearchUrl] = useState();
   const handleChange = nextChecked => { setChecked(nextChecked); };
 
   return (
-    <>
-      <Head>
-        <title>Katasuka</title>
-        <meta name="description" content="Katasuka" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Header/>
+    <TemplatePage title="Katasuka - Mangas" description="Katasuka" >
       <main className={styles.main}>
-      <div className={styles.section}>
+        <div className={styles.section}>
           <div className={styles.headerSearch}>
-            <div className={styles.headerSearchLeft}>
-              {/* <Switch
-                onChange={handleChange}
-                checked={filterAnime}
-                className="react-switch"
-                onColor="#A5E1AD"
-                onHandleColor="#A5E1AD"
-                handleDiameter={30}
-                uncheckedIcon={false}
-                checkedIcon={false}
-                boxShadow="0px 0 5px rgba(0, 0, 0, 0.6)"
-                activeBoxShadow="0px 0px 0 10px rgba(0, 0, 0, 0.2)"
-                height={20}
-                width={48}
-                id="material-switch"
-              /> */}
-            </div>
+            <div className={styles.headerSearchLeft}></div>
             <h1 className={styles.title}>
               Katasuka
             </h1>
@@ -62,15 +38,15 @@ export default function Manga() {
         </div>
 
         <div className={styles.section}>
-            <h2 className={styles.subtitle}>Top Mangas</h2>
-          {/* <Link href="/manga/top">
-          </Link> */}
+          <Link href="/manga/top">
+            <h2 className={styles.subtitleLink}>Top Mangas</h2>
+          </Link>
           <CardCarousel slug="manga" opt="default" url='https://api.jikan.moe/v4/top/manga' />
         </div>
 
       </main>
 
-      <Footer/>
-    </>
+    </TemplatePage>
   )
 }
+export default MangaPage

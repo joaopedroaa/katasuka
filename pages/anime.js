@@ -6,32 +6,20 @@ import styles from '../styles/AnimeHome.module.scss'
 import stylesSearch from '../components/Search/Search.module.scss'
 
 import CardCarousel from "../components/CardCarousel"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import TemplatePage from "../components/TemplatePage"
 import Search from "../components/Search"
 import Switch from "react-switch";
 
 
-export default function Anime() {
+const AnimePage = () => {
   const [filterAnime, setChecked] = useState(false);
   const [search, setSearch] = useState();
   const [searchUrl, setSearchUrl] = useState();
   const handleChange = nextChecked => { setChecked(nextChecked); };
+
   return (
-    <>
-      <Head>
-        <title>Katasuka</title>
-        <meta name="description" content="Katasuka" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Header />
-
-
+    <TemplatePage title="Katasuka - Animes" description="Katasuka" >
       <main className={styles.main}>
-
-
-
         <div className={styles.section}>
           <div className={styles.headerSearch}>
             <div className={styles.headerSearchLeft}>
@@ -81,10 +69,9 @@ export default function Anime() {
           </Link>
           <CardCarousel slug="anime" opt="default" url='https://api.jikan.moe/v4/top/anime' filterAnime={filterAnime} />
         </div>
-
-
       </main>
-      <Footer />
-    </>
+    </TemplatePage>
+
   )
 }
+export default AnimePage

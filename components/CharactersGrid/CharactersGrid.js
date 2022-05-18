@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react';
 import useStats from "../../utils/useStats"
 
 
-export default function CharactersGrid({ id, slug }) {
+const CharactersGrid = ({ id, slug }) => {
   const [search, setSearch] = useState();
 
   const { stats, loading, error } = useStats(`https://api.jikan.moe/v4/${slug}/${id}/characters`);
@@ -37,4 +37,4 @@ export default function CharactersGrid({ id, slug }) {
     </div>
   )
 }
-
+export default CharactersGrid

@@ -1,10 +1,7 @@
-
-
 import styles from './ThemeChanger.module.scss'
 import { useTheme } from 'next-themes'
-import Link from 'next/link'
 
-export default function ThemeChanger() {
+const ThemeChanger = () => {
   const { theme, setTheme } = useTheme()
   return (
     <select className={styles.themes}>
@@ -16,3 +13,4 @@ export default function ThemeChanger() {
     </select>
   )
 }
+export default ThemeChanger

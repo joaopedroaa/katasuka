@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useCallback } from "react";
 import Link from 'next/link';
 import useEmblaCarousel from "embla-carousel-react";
 import SimpleCard from "../SimpleCard"
@@ -20,7 +19,6 @@ const CardCarousel = ({ url, filterAnime, slug, opt }) => {
   if (loading) return <CardCarouselSkeleton />;
   if (error) return <p>Error...</p>;
 
-  // return <CardCarouselSkeleton/>;
   return (
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
