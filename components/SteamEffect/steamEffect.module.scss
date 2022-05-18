@@ -24,7 +24,37 @@
   // height: 400px;
   height: 100%;
   width: 100%;
+
+  &:hover .gamecardcover {
+    transform: rotateX(7deg) translatey(-6px);
+  }
+  &:hover .gamecardcover:after {
+    transform: translatey(0%);
+  }
+
+
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.2);
+    will-change: skewx(0.001deg);
+    transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.35s;
+  }
+  &:hover:before {
+    opacity: 0.6;
+    transform: rotatex(7deg) translatey(-6px) scale(1.05);
+  }
 }
+
+
+
+
 .gamecardcover {
   position: absolute;
   z-index: 1;
@@ -41,47 +71,25 @@
   will-change: transform;
   transform: skewX(0.001deg);
   transition: transform 0.35s ease-in-out;
-}
-.gamecardcover:after {
-  display: block;
-  content: "";
-  position: absolute;
-  z-index: 40;
-  top: 100;
-  left: 0;
-  width: 100%;
-  height: 120%;
-  background: linear-gradient(
-    226deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0.4) 35%,
-    rgba(255, 255, 255, 0.2) 42%,
-    rgba(255, 255, 255, 0) 60%
-  );
-  transform: translatey(-20%);
-  will-change: transform;
-  transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
-}
-.gamecard:hover .gamecardcover {
-  transform: rotateX(7deg) translatey(-6px);
-}
-.gamecard:hover .gamecardcover:after {
-  transform: translatey(0%);
-}
-.gamecard:before {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
-  will-change: skewx(0.001deg);
-  transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out;
-}
-.gamecard:hover:before {
-  opacity: 0.6;
-  transform: rotatex(7deg) translatey(-6px) scale(1.05);
+
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 40;
+    top: 100;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(
+      226deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.4) 35%,
+      rgba(255, 255, 255, 0.2) 42%,
+      rgba(255, 255, 255, 0) 60%
+    );
+    transform: translatey(-20%);
+    will-change: transform;
+    transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+  }
 }

@@ -11,7 +11,7 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import SteamEffect from "../../components/SteamEffect"
 import CardCarousel from "../../components/CardCarousel"
-import EpisodesList from "../../components/EpisodesList"
+import DetailsEpisodes from "../../components/DetailsEpisodes"
 import CharactersGrid from "../../components/CharactersGrid"
 import DetailsInfoCard from "../../components/DetailsInfoCard"
 
@@ -55,7 +55,7 @@ export default function AnimeDetails({ anime }) {
 
           {episodes[anime.mal_id] &&
             <div className={styles.mainContainerEpisodes}>
-              <EpisodesList id={anime.mal_id} duration={anime.duration} />
+              <DetailsEpisodes id={anime.mal_id} duration={anime.duration} />
             </div>}
 
           <div className={styles.sidebar}>

@@ -1,22 +1,23 @@
+
 import React, { useState, useEffect, useCallback } from "react";
 
 import useStats from "../../utils/useStats"
 import episodes from "../../data/episodes"
 
-import styles from './EpisodesList.module.scss'
+import styles from './DetailsEpisodes.module.scss'
 
-import EpisodesListSkeleton from "../EpisodesListSkeleton"
+import DetailsEpisodesSkeleton from "./DetailsEpisodesSkeleton"
 
-const EpisodesList = ({ id, duration }) => {
+const DetailsEpisodes = ({ id, duration }) => {
   const { stats, loading, error } = useStats(`https://api.jikan.moe/v4/anime/${id}/episodes`);
   if (error) return <p>Error...</p>;
   if (loading) return (
     <ul className={styles.ulEpisodes}>
-      <EpisodesListSkeleton />
-      <EpisodesListSkeleton />
-      <EpisodesListSkeleton />
-      <EpisodesListSkeleton />
-      <EpisodesListSkeleton />
+      <DetailsEpisodesSkeleton />
+      <DetailsEpisodesSkeleton />
+      <DetailsEpisodesSkeleton />
+      <DetailsEpisodesSkeleton />
+      <DetailsEpisodesSkeleton />
     </ul>
   );
   if (episodes[id]) {
@@ -52,4 +53,4 @@ const EpisodesList = ({ id, duration }) => {
 
 
 }
-export default EpisodesList
+export default DetailsEpisodes
