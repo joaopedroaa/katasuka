@@ -19,7 +19,6 @@ const Header = ({ children }) => {
         <Link href="/profile">Profile</Link>
         <Link href="/login">Login</Link>
       </nav>
-
       {children}
     </header>
   );

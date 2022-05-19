@@ -63,10 +63,12 @@ const User = () => {
 
 
   if (user) {
+
     writeFavorites(user.uid, [50265, 11061, 21, 43608])
 
+
     return (
-      <TemplatePage title="Profile">
+      <TemplatePage title="Katasuka - Profile" description="Katasuka">
         <div className={styles.userCard}>
           <img src={user.photoURL} alt={user.displayName} />
           <h1>{user.displayName}</h1>
@@ -113,7 +115,6 @@ const User = () => {
       </div>
     </TemplatePage>
   )
-
 }
 
 
