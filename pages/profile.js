@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
+
 import Link from 'next/link'
 import styles from '../styles/Profile.module.scss'
 import TemplatePage from "../components/TemplatePage"
@@ -7,17 +9,11 @@ import FirebaseAuth from "../components/FirebaseAuth"
 import { firebase, db } from "../firebase/clientApp"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useCollection } from "react-firebase-hooks/firestore"
-import { collection, doc, setDoc, getDoc } from 'firebase/firestore';
-import { writeFavorites, ReadFavorites, WriteFavorites } from "../utils/cloudFirestore/Favorite"
+import { collection, doc, query, getDoc, getDocs, where } from 'firebase/firestore';
+import { writeFavorites, writeAnimes } from "../utils/cloudFirestore/Favorite"
 import { useState, useEffect } from 'react';
-
+import SimpleCard from '../components/SimpleCard'
 // writeFavorites(user.uid, ["932", "384"])
-
-
-
-
-
-
 
 
 
@@ -25,55 +21,49 @@ import { useState, useEffect } from 'react';
 
 const User = () => {
   const [user, loading, error] = useAuthState(firebase.auth())
-  const [favoriteAnimes, setFavoriteAnimes] = useState([])
-  const [favoriteAnimesLoad, setFavoriteAnimesLoad] = useState(0)
-
-
+  const [favoriteCollection, setFavoriteCollection] = useState([])
+  const [favoriteCollectionLoad, setFavoriteCollectionLoad] = useState()
+  const [animesCollection, setAnimesCollection] = useState([])
+  const [animesCollectionLoad, setAnimesCollectionLoad] = useState()
 
   function deleteId(arr, value) {
-    var index = arr.indexOf(value);
-    if (index > -1) {
-      arr.splice(index, 1);
-    }
-    console.log(arr);
-    setFavoriteAnimes({ mal_id: arr });
-    WriteFavorites(user.uid, arr)
+    const array = arr.filter(x => x !== value);
+    setFavoriteCollection({ mal_id: array });
+    writeFavorites(user.uid, array)
   }
 
-
-
-
-
-
-
-
-
+  function findId(arr, mal_id) {
+    const papad = arr.filter(x => x.id == mal_id)[0]
+    return papad
+    // console.log(arr);
+    // console.log(mal_id);
+    // console.log(papad);
+  }
 
   useEffect(() => {
     const fetchFavorites = async (userUid) => {
-      const userDoc = doc(db, "favorites", userUid)
-      await getDoc(userDoc).then((doc) => {
-        if (doc.exists()) {
-          setFavoriteAnimes(doc.data())
-          setFavoriteAnimesLoad(1)
-        }
-      })
+      const userDoc = await getDoc(doc(db, "favorites", userUid))
+      setFavoriteCollection(userDoc.data())
+      setFavoriteCollectionLoad(1)
+
     }
 
-    if (user)
-      fetchFavorites(user.uid)
+    const fetchAnimes = async () => {
+      const animeCollection = await query(collection(db, "animes"), where("data.mal_id", "in", favoriteCollection.mal_id))
+      const animeQuery = await getDocs(animeCollection)
+      // setAnimesCollection(animeQuery)
+      setAnimesCollection(animeQuery.docs.map(doc => ({ id: doc.id, ...doc.data() })))
+      setAnimesCollectionLoad(1)
+    }
 
-  }, [user, favoriteAnimesLoad])
+    if (user) fetchFavorites(user.uid)
+    if (favoriteCollectionLoad) fetchAnimes()
 
-
+  }, [user, favoriteCollectionLoad])
 
 
   if (user) {
-    console.log(favoriteAnimes);
-    // const aa = WriteFavorites(user.uid, ["1", "2", "4", "5"])
-
-
-    // console.log(aa);
+    // writeFavorites(user.uid, [50265, 11061, 21])
 
     return (
       <TemplatePage title="Katasuka - Profile" description="Katasuka">
@@ -84,28 +74,25 @@ const User = () => {
           <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
         </div>
 
-        {/* {favoriteAnimesLoad && <h1>Carregou</h1>}
-        {!favoriteAnimesLoad && <h1>Nao Carregou</h1>} */}
 
         <div className={styles.favoritesList}>
+          {/* {animesCollection && animesCollection.docs.map((doc) => { */}
+          {favoriteCollectionLoad && animesCollectionLoad && favoriteCollection.mal_id.map((mal_id) => {
+            const { id, data } = findId(animesCollection, mal_id)
+            const slug = "anime"
 
-          {favoriteAnimesLoad && favoriteAnimes.mal_id.map((anime_id) => (
-            <li key={anime_id}>
-              <p>{anime_id}</p>
-              <button onClick={() => deleteId(favoriteAnimes.mal_id, anime_id)}>Remove</button>
-            </li>
-          ))}
+            return (
+              <Link key={mal_id} href={`/${slug}/${mal_id}`}  >
+                <li >
+                  <SimpleCard id={mal_id} slug={slug} imageUrl={data.images.webp.large_image_url} title={data.title} />
+                  <button onClick={() => deleteId(favoriteCollection.mal_id, mal_id)}>Remove</button>
+                </li>
+              </Link>
+            )
+          })
+          }
         </div>
-
-
-
-        {/* {favorites && favorites.mal_id.map((id) => {
-          return (
-            <h1 key={id}>{id}</h1>
-          )
-        })} */}
       </TemplatePage>
-
     )
   }
 
@@ -127,3 +114,35 @@ const User = () => {
 
 
 export default User
+
+
+
+
+
+    // const aa = writeFavorites(user.uid, [50265, 5114])
+    // writeFavorites(user.uid, [50265, 11061, 21])
+
+
+    // console.log(animesCollection);
+    // animesCollection && animesCollection.forEach(element => {
+    //   console.log(element);
+
+    // });
+
+
+
+    // const datas = animesInfos
+
+    // [colId] = colData
+    // setAnimesInfos(...animesInfos, )
+
+    // id: doc.data().data
+    // for (let i = 0; i < favoriteCollection.mal_id.length; i++) {
+    //   const am = favoriteCollection.mal_id[i];
+    //   if (am == colId) {
+    //     console.log(am);
+    //     break
+    //   }
+    // }
+
+    // console.log(animesCollection.docs);

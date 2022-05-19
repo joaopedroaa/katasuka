@@ -12,10 +12,25 @@ import DetailsEpisodes from "../../components/DetailsEpisodes"
 import DetailsInfoCard from "../../components/DetailsInfoCard"
 import TemplatePage from "../../components/TemplatePage"
 
+import { writeFavorites, writeAnimesWithData } from "../../utils/cloudFirestore/Favorite"
+
+
+
 export const getServerSideProps = async (context) => {
   const { id } = context.query
   const res = await fetch("https://api.jikan.moe/v4/anime/" + id)
   const data = await res.json()
+  writeAnimesWithData(id, data.data)
+
+  // favoriteCollection.mal_id.forEach((animeId) => {
+  //   const animePos = findId(animesCollection, animeId)
+  //   if (animePos == undefined) {
+  //     console.log("dwd" + findId(animesCollection, animeId));
+  //   }
+  //   console.log(findId(animesCollection, animeId));
+
+  //   // const { id, data } = findId(animesCollection, anime_id)
+  // });
 
   return {
     props: { anime: data.data },
