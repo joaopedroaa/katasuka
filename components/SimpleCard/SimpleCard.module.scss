@@ -44,7 +44,6 @@
     background-color: var(--background2);
     // margin-top: 10px;
     h2 {
-
       margin: 0 0 0 0;
       font-size: 1.2rem;
     }
@@ -69,14 +68,11 @@
     justify-content: space-between;
   }
 
-
   transition: 0.2s ease-in-out;
-  &:hover ,
-  &:focus ,
-  &:active  {
+  &:hover,
+  &:focus,
+  &:active {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: 0.2s ease-in-out;
   }
 }
-
-

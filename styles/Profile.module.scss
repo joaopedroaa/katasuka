@@ -1,4 +1,4 @@
-.userCard{
+.userCard {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,14 +9,13 @@
   // width: 400px;
   padding: 30px;
 
-  img{
+  img {
     width: 100px;
     border-radius: 50%;
   }
 }
 
-
-.favoritesList{
+.favoritesList {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,14 +23,35 @@
 
   // background-color: red;
 
-  li{
+  li {
     list-style: none;
-    margin: 50px;
+    margin: 10px;
     background-color: var(--background2);
+    // margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .removeButton {
+    background-color: transparent;
+    color: red;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    // padding: 10px;
+
+    svg{
+      height: 24px;
+      width: 24px;
+    }
+
+    &:hover svg {
+      filter: brightness(10%);
+    }
   }
 }
 
-.main{
+.main {
   display: flex;
   align-items: center;
   justify-content: center;

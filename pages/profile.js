@@ -16,6 +16,8 @@ import SimpleCard from '../components/SimpleCard'
 // writeFavorites(user.uid, ["932", "384"])
 
 
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
+
 
 
 
@@ -35,9 +37,6 @@ const User = () => {
   function findId(arr, mal_id) {
     const papad = arr.filter(x => x.id == mal_id)[0]
     return papad
-    // console.log(arr);
-    // console.log(mal_id);
-    // console.log(papad);
   }
 
   useEffect(() => {
@@ -81,12 +80,14 @@ const User = () => {
             const slug = "anime"
 
             return (
-              <Link key={mal_id} href={`/${slug}/${mal_id}`}  >
-                <li >
+              <li key={mal_id} className={styles.listItem}>
+                <Link href={`/${slug}/${mal_id}`}  >
                   <SimpleCard id={mal_id} slug={slug} imageUrl={data.images.webp.large_image_url} title={data.title} />
-                  <button onClick={() => deleteId(favoriteCollection.mal_id, mal_id)}>Remove</button>
-                </li>
-              </Link>
+                </Link>
+                <button className={styles.removeButton} onClick={() => deleteId(favoriteCollection.mal_id, mal_id)}>
+                  <MdFavorite />
+                </button>
+              </li>
             )
           })
           }
@@ -97,7 +98,7 @@ const User = () => {
 
 
   if (loading) return (
-    <TemplatePage title="Loading" description="Katasuka">
+    <TemplatePage title="Loading" >
       <div className={styles.main}>
         <p>Loading</p>
 
@@ -106,7 +107,7 @@ const User = () => {
   )
 
   return (
-    <TemplatePage title="Logue" description="Katasuka">
+    <TemplatePage title="Logue" >
       <div className={styles.main}>
         <h1>403</h1>
         <p>Você precisa estar logado(a) para ver seu perfil.</p>
