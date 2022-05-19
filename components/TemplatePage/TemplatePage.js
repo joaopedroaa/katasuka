@@ -1,6 +1,7 @@
 import TemplateHead from "../TemplateHead"
 import Header from "../Header"
 import Footer from "../Footer"
+import FirebaseAuth from "../FirebaseAuth"
 
 const TemplatePage = ({ title, description, styles, children }) => {
   return (
