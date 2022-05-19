@@ -17,7 +17,7 @@ const MangaPage = () => {
   const handleChange = nextChecked => { setChecked(nextChecked); };
 
   return (
-    <TemplatePage title="Katasuka - Mangas" description="Katasuka" >
+    <TemplatePage title="Mangas" >
       <main className={styles.main}>
         <div className={styles.section}>
           <div className={styles.headerSearch}>

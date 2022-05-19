@@ -17,6 +17,7 @@ const Header = ({ children }) => {
         <Link href="/anime">Anime</Link>
         <Link href="/manga">Manga</Link>
         <Link href="/profile">Profile</Link>
+        <Link href="/login">Login</Link>
       </nav>
 
       {children}

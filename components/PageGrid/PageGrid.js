@@ -18,7 +18,7 @@ const PageGrid = ({ name, url }) => {
 
 
   return (
-    <TemplatePage title={`Katasuka - ${name}`} description={"Katasuka"}>
+    <TemplatePage title={`${name}`} description={"Katasuka"}>
       <main className={styles.main}>
         <h1 className={styles.title}>Katasuka</h1>
 

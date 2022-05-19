@@ -1,0 +1,12 @@
+.loginCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 6vw auto;
+  width: 400px;
+
+  background-color: var(--background2);
+  padding: 40px;
+}

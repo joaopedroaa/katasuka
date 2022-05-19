@@ -18,7 +18,7 @@ const AnimePage = () => {
   const handleChange = nextChecked => { setChecked(nextChecked); };
 
   return (
-    <TemplatePage title="Katasuka - Animes" description="Katasuka" >
+    <TemplatePage title="Animes" description="Katasuka" >
       <main className={styles.main}>
         <div className={styles.section}>
           <div className={styles.headerSearch}>
