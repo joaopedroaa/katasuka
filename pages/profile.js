@@ -49,7 +49,7 @@ const User = () => {
     }
 
     const fetchAnimes = async () => {
-      const animeCollection = await query(collection(db, "animes"), where("data.mal_id", "in", favoriteCollection.mal_id))
+      const animeCollection = query(collection(db, "animes"), where("data.mal_id", "in", favoriteCollection.mal_id))
       const animeQuery = await getDocs(animeCollection)
       // setAnimesCollection(animeQuery)
       setAnimesCollection(animeQuery.docs.map(doc => ({ id: doc.id, ...doc.data() })))
@@ -57,23 +57,22 @@ const User = () => {
     }
 
     if (user) fetchFavorites(user.uid)
-    if (favoriteCollectionLoad) fetchAnimes()
+    if (favoriteCollectionLoad && favoriteCollection != undefined) fetchAnimes()
 
   }, [user, favoriteCollectionLoad])
 
 
   if (user) {
-    // writeFavorites(user.uid, [50265, 11061, 21])
+    writeFavorites(user.uid, [50265, 11061, 21, 43608])
 
     return (
-      <TemplatePage title="Katasuka - Profile" description="Katasuka">
+      <TemplatePage title="Profile">
         <div className={styles.userCard}>
           <img src={user.photoURL} alt={user.displayName} />
           <h1>{user.displayName}</h1>
           <p>{user.email}</p>
           <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
         </div>
-
 
         <div className={styles.favoritesList}>
           {/* {animesCollection && animesCollection.docs.map((doc) => { */}
@@ -98,18 +97,23 @@ const User = () => {
 
 
   if (loading) return (
-    <TemplatePage title="Katasuka - Loading" description="Katasuka">
-      <p>Loading</p>
+    <TemplatePage title="Loading" description="Katasuka">
+      <div className={styles.main}>
+        <p>Loading</p>
+
+      </div>
     </TemplatePage>
   )
 
-  if (!user) {
-    return (
-      <TemplatePage title="Katasuka - Loading" description="Katasuka">
-        <FirebaseAuth />
-      </TemplatePage>
-    )
-  }
+  return (
+    <TemplatePage title="Logue" description="Katasuka">
+      <div className={styles.main}>
+        <h1>403</h1>
+        <p>Você precisa estar logado(a) para ver seu perfil.</p>
+      </div>
+    </TemplatePage>
+  )
+
 }
 
 

@@ -30,3 +30,11 @@
     background-color: var(--background2);
   }
 }
+
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 30vw;
+}

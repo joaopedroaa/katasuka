@@ -12,11 +12,8 @@ const writeFavorites = async (userId, mal_id) => {
     await setDoc(userDoc, {
       mal_id
     })
-
   } catch (error) { console.log(error) }
 }
-
-
 
 
 const writeAnimes = async (mal_id) => {
@@ -26,18 +23,17 @@ const writeAnimes = async (mal_id) => {
     const data = await res.json()
     return data.data
   }
-
   const data = await getAnimeInfos(id)
   try {
     const userDoc = doc(db, "animes", id)
     await setDoc(userDoc, {
       data
     })
-
   } catch (error) { console.log(error) }
-
   return data
 }
+
+
 
 const writeAnimesWithData = async (id, data) => {
   try {
@@ -45,11 +41,13 @@ const writeAnimesWithData = async (id, data) => {
     await setDoc(userDoc, {
       data
     })
-
   } catch (error) { console.log(error) }
-
   return data
 }
+
+
+
+
 
 
 export { writeFavorites, writeAnimes, writeAnimesWithData }
