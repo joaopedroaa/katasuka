@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { User } from 'firebase/auth'
 
 
-const WriteFavorites = async (userId, mal_id) => {
+const writeFavorites = async (userId, mal_id) => {
   try {
     const userDoc = doc(db, "favorites", userId)
     await setDoc(userDoc, {
@@ -18,39 +18,38 @@ const WriteFavorites = async (userId, mal_id) => {
 
 
 
-const ReadFavorites = (userId) => {
-  const [dt, setDt] = useState()
 
-  const readData = async () => {
-    try {
-      const userDoc = doc(db, "favorites", userId)
-      const data = await getDoc(userDoc).then((doc) => {
-        if (doc.exists()) {
-          // console.log("doc.data()");
-
-          setDt(doc.data())
-          // return doc.data()
-        }
-      })
-
-
-      // console.log(dt);
-      // console.log('Data was successfully fetched from cloud firestore! Close this alert and check console for output.')
-      // return data
-
-    } catch (error) {
-      console.log("error")
-    }
+const writeAnimes = async (mal_id) => {
+  const id = mal_id.toString()
+  const getAnimeInfos = async (id) => {
+    const res = await fetch("https://api.jikan.moe/v4/anime/" + id)
+    const data = await res.json()
+    return data.data
   }
 
-  readData()
-  // console.log(result);
-  // const aa = await getDoc(userDoc).then((doc) => doc.data())
-  // console.log(aa.value);
-  // return result
+  const data = await getAnimeInfos(id)
+  try {
+    const userDoc = doc(db, "animes", id)
+    await setDoc(userDoc, {
+      data
+    })
 
+  } catch (error) { console.log(error) }
+
+  return data
+}
+
+const writeAnimesWithData = async (id, data) => {
+  try {
+    const userDoc = doc(db, "animes", id)
+    await setDoc(userDoc, {
+      data
+    })
+
+  } catch (error) { console.log(error) }
+
+  return data
 }
 
 
-
-export { WriteFavorites, ReadFavorites }
+export { writeFavorites, writeAnimes, writeAnimesWithData }
