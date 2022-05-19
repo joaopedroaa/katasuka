@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../../styles/AnimeDetails.module.scss'
+import styles from '../../styles/Details.module.scss'
 import stylesHome from '../../styles/AnimeHome.module.scss'
 
 import CardCarousel from "../../components/CardCarousel"
