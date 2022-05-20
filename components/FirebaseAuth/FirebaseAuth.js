@@ -13,11 +13,12 @@ import { initFirebase } from "../../firebase/clientApp"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { mapUserData, setUserCookie } from "../../firebase/handleCookies";
 import { useUser } from "../../firebase/useUser";
+import { useRouter } from "next/router";
 
 
 
 initFirebase()
-const auth = getAuth()
+
 
 
 const firebaseAuthConfig = ({ signInSuccessUrl }) => ({
@@ -39,14 +40,19 @@ const firebaseAuthConfig = ({ signInSuccessUrl }) => ({
 
 
 export default function FirebaseAuth() {
+  const router = useRouter()
+  const auth = getAuth()
   const [renderAuth, setRenderAuth] = useState(false)
-  // const { userCache } = useUser()
+  const { userCache } = useUser()
+  const signInSuccessUrl = "/profile"
+
 
   useEffect(() => {
     if (typeof window !== 'undefined') setRenderAuth(true)
   }, [])
 
-  const signInSuccessUrl = "/profile"
+
+  if (userCache) router.push(signInSuccessUrl);
   return (
     <>
       <div className={styles.loginCard} >
