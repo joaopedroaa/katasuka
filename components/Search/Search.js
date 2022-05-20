@@ -4,7 +4,7 @@ import styles from './Search.module.scss'
 
 import CardCarousel from "../CardCarousel"
 import { useState, useEffect } from 'react';
-
+import { MdSearch } from "react-icons/md";
 
 const Search = () => {
   const [search, setSearch] = useState();
@@ -23,7 +23,9 @@ const Search = () => {
       <main className={styles.main}>
         <div className={styles.section}>
           <input type="text" name="name" className={styles.searchText} onChange={(event) => { setSearch(event.target.value) }} />
-          <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/anime?q=${search}`) }} className={styles.searchButton}>Search</button>
+          <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/anime?q=${search}`) }} className={styles.searchButton}>
+            <MdSearch />
+          </button>
         </div>
 
         {searchUrl && <CardCarousel slug="anime" opt="default" url={searchUrl} />}

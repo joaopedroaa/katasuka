@@ -1,4 +1,4 @@
-.main{
+.main {
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
@@ -7,14 +7,12 @@
   width: 100vw;
 }
 
-.section{
+.section {
   margin-right: 20px;
   border-radius: 4px;
   margin-left: auto;
   margin-bottom: 10px;
 }
-
-
 
 .searchText {
   all: unset;
@@ -25,12 +23,20 @@
   height: 40px;
   border: none;
   border: 1px solid var(--principal1);
+  border-radius: 4px 0 0 4px;
 }
 
 .searchButton {
   all: unset;
-  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // padding: 14px;
+  width: 50px;
+  height: 50px;
   border: none;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
 
   // height: 100%;
@@ -39,4 +45,9 @@
   // margin-left: 10px;
   color: var(--background1);
   background-color: var(--principal1);
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 }

@@ -15,10 +15,7 @@ import { useState, useEffect } from 'react';
 import SimpleCard from '../components/SimpleCard'
 // writeFavorites(user.uid, ["932", "384"])
 
-
-import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
-
-
+import { MdFavorite } from "react-icons/md";
 
 
 const User = () => {
@@ -79,6 +76,7 @@ const User = () => {
             const { id, data } = findId(animesCollection, mal_id)
             const slug = "anime"
 
+            console.log(`/${slug}/${mal_id}`);
             return (
               <li key={mal_id} className={styles.listItem}>
                 <Link href={`/${slug}/${mal_id}`}  >

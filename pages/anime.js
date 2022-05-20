@@ -9,6 +9,7 @@ import CardCarousel from "../components/CardCarousel"
 import TemplatePage from "../components/TemplatePage"
 import Search from "../components/Search"
 import Switch from "react-switch";
+import { MdSearch } from "react-icons/md";
 
 
 const AnimePage = () => {
@@ -44,7 +45,7 @@ const AnimePage = () => {
             </h1>
             <div className={styles.headerSearchRight}>
               <input type="text" name="name" className={stylesSearch.searchText} onChange={(event) => { setSearch(event.target.value) }} />
-              <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/anime?q=${search}`) }} className={stylesSearch.searchButton}>Search</button>
+              <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/anime?q=${search}`) }} className={stylesSearch.searchButton}><MdSearch/></button>
             </div>
           </div>
         </div>
