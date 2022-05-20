@@ -13,7 +13,13 @@ const firebaseCredentials = {
   measurementId: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
 };
 
+
+function initFirebase() {
+  firebase.initializeApp(firebaseCredentials);
+}
+
 const app = firebase.initializeApp(firebaseCredentials);
 const db = getFirestore(app);
 
-export { firebase, db }
+
+export { initFirebase, db }

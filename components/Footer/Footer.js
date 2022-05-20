@@ -8,10 +8,14 @@ const Footer = () => {
   const { theme, setTheme } = useTheme()
   return (
     <footer className={styles.footer}>
+      <div className={styles.links}>
+        <Link href={`/about/dmca`}>DMCA</Link>
+        <Link href={`/about/privacy-policy`}>Politica de privacidade</Link>
+        <Link href={`/about/terms-of-service`}>Termos de servico</Link>
+      </div>
 
-      <div className={styles.dmca}><Link href={`/about/dmca`}>DMCA</Link></div>
       {/* <span></span> */}
-      <ThemeChanger/>
+      <ThemeChanger />
     </footer>
   )
 }

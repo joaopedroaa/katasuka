@@ -10,13 +10,16 @@ import TemplatePage from "../components/TemplatePage"
 import Search from "../components/Search"
 import Switch from "react-switch";
 import { MdSearch } from "react-icons/md";
-
+import {getUserFromCookie} from "../firebase/handleCookies"
 
 const AnimePage = () => {
   const [filterAnime, setChecked] = useState(false);
   const [search, setSearch] = useState();
   const [searchUrl, setSearchUrl] = useState();
   const handleChange = nextChecked => { setChecked(nextChecked); };
+
+  // getUserFromCookie()
+  // console.log(ss);
 
   return (
     <TemplatePage title="Animes" description="Katasuka" >

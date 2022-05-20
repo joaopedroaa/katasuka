@@ -90,5 +90,6 @@ select{
 }
 
 button{
+  padding: 4px;
   border: none;
 }
