@@ -84,8 +84,8 @@ const User = () => {
     // console.log(user);
     // console.log(`User: ${user}`);
     // setUserCookie(mapUserData(user))
-    // writeFavorites(user.uid, [50265, 11061, 21, 43608])
     // console.log(user);
+    // writeFavorites(user.uid, [50265, 11061, 21, 43608])
 
     return (
       <TemplatePage title="Profile">
@@ -112,9 +112,12 @@ const User = () => {
               // console.log(`/${slug}/${mal_id}`);
               return (
                 <li key={mal_id} className={styles.listItem}>
-                  <Link href={`/${slug}/${mal_id}`}  >
-                    <SimpleCard id={mal_id} slug={slug} imageUrl={data.images.webp.large_image_url} title={data.title} />
+                  <Link href={`/${slug}/${mal_id}`} >
+                    <div className="">
+                      <SimpleCard id={mal_id} slug={slug} imageUrl={data.images.webp.large_image_url} title={data.title} />
+                    </div>
                   </Link>
+
                   <button className={styles.removeButton} onClick={() => deleteId(favoriteCollection.mal_id, mal_id)}>
                     <MdFavorite />
                   </button>

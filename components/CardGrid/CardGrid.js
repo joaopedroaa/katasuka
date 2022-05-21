@@ -32,6 +32,7 @@ const CardGrid = ({ opt, url, filterAnime }) => {
     <>
       {stats.data.map((anime) => {
         if (!episodes[anime.mal_id] && filterAnime) return (<></>)
+
         return (
           <Link  href={`/${opt}/${anime.mal_id}`} key={anime.mal_id}   >
             <a>
