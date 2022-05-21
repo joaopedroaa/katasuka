@@ -18,15 +18,16 @@
   border-radius: 0;
   width: 290px;
   color: var(--foreground1);
+  border-radius: 8px;
   // color: red;
   // box-shadow: 0 0 2px var(--foreground1);
   // padding: 10px;
   // padding-bottom: 0;
 
-  .rating {
-    z-index: 200;
-    position: absolute;
-  }
+  // .rating {
+  //   z-index: 200;
+  //   position: absolute;
+  // }
 
   .cardImage {
     height: 370px;
@@ -43,9 +44,10 @@
     padding: 10px;
     background-color: var(--background2);
     // margin-top: 10px;
+
     h2 {
       margin: 0 0 0 0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     p {
@@ -56,7 +58,7 @@
   }
 
   .cardInfosDetails {
-    height: 120px;
+    height: 100px;
   }
 
   .cardInfosOnlyName {

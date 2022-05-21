@@ -43,32 +43,41 @@ const User = () => {
 
 
   const [favoriteCollection, setFavoriteCollection] = useState([])
-  const [favoriteCollectionLoad, setFavoriteCollectionLoad] = useState()
+  const [favoriteCollectionRender, setFavoriteCollectionRender] = useState(false)
+
 
   const [animesCollection, setAnimesCollection] = useState([])
-  const [animesCollectionLoad, setAnimesCollectionLoad] = useState()
+  const [animesCollectionRender, setAnimesCollectionRender] = useState(false)
+
+
+  const fetchFavorites = async (userUid) => {
+    const userDoc = await getDoc(doc(db, "favorites", userUid))
+    setFavoriteCollection(userDoc.data())
+    setFavoriteCollectionRender(true)
+  }
+
+  const fetchAnimes = async () => {
+    const animeCollection = query(collection(db, "animes"), where("data.mal_id", "in", favoriteCollection.mal_id))
+    const animeQuery = await getDocs(animeCollection)
+    setAnimesCollection(animeQuery.docs.map(doc => ({ id: doc.id, ...doc.data() })))
+    setAnimesCollectionRender(true)
+  }
+
+
 
   useEffect(() => {
-    const fetchFavorites = async (userUid) => {
-      // console.log(userUid);
-      // console.log(user.uid);
-      const userDoc = await getDoc(doc(db, "favorites", userUid))
-      setFavoriteCollection(userDoc.data())
-      setFavoriteCollectionLoad(1)
-
+    if (user && !favoriteCollectionRender) {
+      console.log("1 -fetchFavorites");
+      fetchFavorites(user.uid)
     }
 
-    const fetchAnimes = async () => {
-      const animeCollection = query(collection(db, "animes"), where("data.mal_id", "in", favoriteCollection.mal_id))
-      const animeQuery = await getDocs(animeCollection)
-      setAnimesCollection(animeQuery.docs.map(doc => ({ id: doc.id, ...doc.data() })))
-      setAnimesCollectionLoad(1)
+    if (user && favoriteCollectionRender && !animesCollectionRender) {
+      console.log("2 - fetchAnimes");
+      fetchAnimes()
     }
+  }, [user, favoriteCollectionRender, animesCollectionRender])
 
-    if (user) fetchFavorites(user.uid)
-    if (favoriteCollectionLoad) fetchAnimes()
 
-  }, [user, favoriteCollection, animesCollection])
 
 
   if (user) {
@@ -89,13 +98,13 @@ const User = () => {
 
         <div className={styles.favoritesList}>
 
-          {!favoriteCollectionLoad && !animesCollectionLoad &&
-            <div> <h3>Loading Favorites Preferences</h3> </div>}
+          {!favoriteCollectionRender && !animesCollectionRender &&
+            <div> <h3>Loading Favorites Collection</h3> </div>}
 
-          {favoriteCollectionLoad && !animesCollectionLoad &&
-            <div> <h3>Loading Favorites Data</h3> </div>}
+          {favoriteCollectionRender && !animesCollectionRender &&
+            <div> <h3>Loading Animes Collection</h3> </div>}
 
-          {favoriteCollectionLoad && animesCollectionLoad &&
+          {favoriteCollectionRender && animesCollectionRender &&
             favoriteCollection.mal_id.map((mal_id) => {
               const { id, data } = findId(animesCollection, mal_id)
               const slug = "anime"
@@ -119,19 +128,6 @@ const User = () => {
   }
 
 
-
-
-
-  // if (!user) return (
-  //   <TemplatePage title="Loading" >
-  //     <div className={styles.main}>
-  //       <p>Loading User</p>
-  //     </div>
-  //   </TemplatePage>
-  // )
-
-
-
   return (
     <TemplatePage title="Logue" >
       <div className={styles.main}>
@@ -140,7 +136,6 @@ const User = () => {
       </div>
     </TemplatePage>
   )
-
 }
 
 

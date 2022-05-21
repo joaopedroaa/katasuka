@@ -13,12 +13,14 @@ initFirebase()
 
 const useUser = () => {
   const [user, setUser] = useState()
+
   const router = useRouter()
   const auth = getAuth()
 
   const logout = async () => {
     try {
       auth.signOut();
+
       removeUserCookie();
       router.push("/login");
     } catch (e) {

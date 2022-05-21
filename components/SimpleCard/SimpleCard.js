@@ -22,6 +22,7 @@ const SimpleCard = ({ id, slug, imageUrl, title, rating, infoRight, infoLeft }) 
           <p className={styles.infoLeft}>{infoLeft}</p>
         </div>
       </div>
+
     </div>
   )
 }

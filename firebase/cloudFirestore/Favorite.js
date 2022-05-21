@@ -7,6 +7,7 @@ import { User } from 'firebase/auth'
 
 
 const writeFavorites = async (userId, mal_id) => {
+  console.log("writeFavorites: " + userId);
   try {
     const userDoc = doc(db, "favorites", userId)
     await setDoc(userDoc, {

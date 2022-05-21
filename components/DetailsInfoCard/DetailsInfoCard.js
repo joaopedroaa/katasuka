@@ -23,6 +23,7 @@ import cookies from 'js-cookie'
 
 const DetailsInfoCard = ({ slug, anime }) => {
   const { user, logout } = useUser()
+  // console.log(opt);
   // if (getUserFromCookie) {
   // console.log(anime.id);
   // }
