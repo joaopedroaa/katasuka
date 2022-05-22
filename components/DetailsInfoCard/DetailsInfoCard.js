@@ -30,48 +30,48 @@ const DetailsInfoCard = ({ slug, anime }) => {
   // const cookie = cookies.get('auth')
   // console.log(cookie);
 
-  if (user) {
 
-    return (
-      <div className={styles.infoCard}>
-        <div className={styles.infoCardImage}>
-          <SteamEffect src={anime.images.webp.large_image_url} className={styles.SteamEffect} />
+  return (
+    <div className={styles.infoCard}>
+      <div className={styles.infoCardImage}>
+        <SteamEffect src={anime.images.webp.large_image_url} className={styles.SteamEffect} />
+      </div>
+
+      <div className={styles.infoCardText}>
+        <div className={styles.infoCardTextHeader}>
+          <div >
+            <p className={styles.demographics}>{anime.demographics && anime.demographics.map((demographic) => <span key={demographic.name}>{demographic.name}</span>)}</p>
+            <h1 className={styles.title}> {anime.title}</h1>
+            <h2 className={styles.year}>{anime.season} {anime.year} </h2>
+          </div>
+          <div >
+            {!episodes[anime.mal_id] && <CharactersGrid slug={slug} id={anime.mal_id} />}
+          </div>
         </div>
 
-        <div className={styles.infoCardText}>
-          <div className={styles.infoCardTextHeader}>
-            <div >
-              <p className={styles.demographics}>{anime.demographics && anime.demographics.map((demographic) => <span key={demographic.name}>{demographic.name}</span>)}</p>
-              <h1 className={styles.title}> {user.name} </h1>
-              <h2 className={styles.year}>{anime.season} {anime.year} </h2>
-            </div>
-            <div >
-              {!episodes[anime.mal_id] && <CharactersGrid slug={slug} id={anime.mal_id} />}
-            </div>
-          </div>
-
-          <p className={styles.synopsis}>{synopsisResume(anime.synopsis || "", 1000)}</p>
+        <p className={styles.synopsis}>{synopsisResume(anime.synopsis || "", 1000)}</p>
 
 
-          <div className={styles.spaceBetween}>
+        <div className={styles.spaceBetween}>
+          {
+            <button >Favorite button</button>
+          }
 
-            <button >Favori</button>
 
-
-            <div className={styles.genre}>
-              {anime.genres.map((genre) => {
-                return (
-                  <a key={genre.mal_id} href={genre.url}>
-                    <span >{genre.name}</span>
-                  </a>
-                )
-              })}
-            </div>
+          <div className={styles.genre}>
+            {anime.genres.map((genre) => {
+              return (
+                <a key={genre.mal_id} href={genre.url}>
+                  <span >{genre.name}</span>
+                </a>
+              )
+            })}
           </div>
         </div>
       </div>
+    </div>
 
-    )
-  }
+  )
+
 }
 export default DetailsInfoCard
