@@ -34,6 +34,7 @@ const DetailsEpisodes = ({ id, duration }) => {
           <a href={episodesUrl + "1.mp4"} target="_blank" rel="noreferrer" className={styles.liEpisodes} >
             1 - Watch
           </a>}
+
       </ul>
     )
   }

@@ -45,7 +45,7 @@ const AnimeDetails = ({ anime }) => {
   const toDateString = `${toDate.day}/${toDate.month}/${toDate.year}`
 
   return (
-    <TemplatePage title={`${anime.title}`} description={anime.synopsis} image={anime.images.webp.image_url}>
+    <TemplatePage title={`${anime.title}`} description={anime.synopsis} image={anime.images.webp.large_image_url}>
       <DetailsInfoCard slug="anime" anime={anime} />
 
       <main className={styles.mainContainer}>

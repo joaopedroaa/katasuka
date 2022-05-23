@@ -90,11 +90,20 @@
       margin-top: 20px;
     }
 
+    .favoriteButton{
+
+    }
+
     .genre {
       margin-left: auto;
+      // background-color: red;
+
 
       span {
-        margin: 0 10px;
+        margin: 0 7px;
+        border: 2px solid var(--principal1);
+        border-radius: 8px;
+        padding: 4px;
       }
     }
   }

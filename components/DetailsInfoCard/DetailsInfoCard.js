@@ -53,9 +53,7 @@ const DetailsInfoCard = ({ slug, anime }) => {
 
 
         <div className={styles.spaceBetween}>
-          {
-            <button >Favorite button</button>
-          }
+          {<button className={styles.favoriteButton}>Favorite button</button>}
 
 
           <div className={styles.genre}>

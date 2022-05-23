@@ -3,14 +3,15 @@ import episodes from "../../data/episodes"
 import synopsisResume from "../../utils/synopsisResume"
 import SteamEffect from '../SteamEffect'
 
-const SimpleCard = ({ id, slug, imageUrl, title, rating, infoRight, infoLeft }) => {
+const SimpleCard = ({ id, slug, imageUrl, title, infoRight, infoLeft }) => {
+
   return (
     <div className={`${styles.card}
       ${episodes[id] || slug == "manga" ?
         styles.cardOk :
         styles.cardNotFound}`
     }>
-      {/* <p className={styles.rating}>{rating}</p> */}
+
       <div className={styles.cardImage}>
         <SteamEffect src={imageUrl} />
       </div>

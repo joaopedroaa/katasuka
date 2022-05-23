@@ -7,6 +7,6 @@
 
 - [x] Load more top animes
 - [x] Search
-- [ ] /login css
-- [ ] skeleton responsive card
+- [x] /login css
+- [x] skeleton responsive card
 - [ ] /anime/id favorive button

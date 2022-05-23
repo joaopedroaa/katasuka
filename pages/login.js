@@ -6,7 +6,7 @@ import config from "../data/config.json"
 
 const FourOhFour = () => {
   return (
-    <TemplatePage title="Login" description={`Algo de errado não está certo, tente outro link`}>
+    <TemplatePage title="Login" >
       <FirebaseAuth/>
     </TemplatePage>
   )

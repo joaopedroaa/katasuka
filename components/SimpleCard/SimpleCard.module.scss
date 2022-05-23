@@ -10,14 +10,16 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--background2);
-  // margin: 1rem 0.4rem;
+  color: var(--foreground1);
   text-align: left;
   color: inherit;
   text-decoration: none;
-  // border: 1px solid #eaeaea;
   border-radius: 0;
   width: 290px;
-  color: var(--foreground1);
+
+
+  // margin: 1rem 0.4rem;
+  // border: 1px solid #eaeaea;
   // border-radius: 2px;
   // color: red;
   // box-shadow: 0 0 2px var(--foreground1);
@@ -29,19 +31,22 @@
   //   position: absolute;
   // }
 
-  .cardImage {
-    height: 370px;
-    border-radius: 100px;
 
-    padding: 10px;
+  .cardImage {
+    height: 380px;
+    border-radius: 100px;
+    margin: 8px;
+    // margin-top: -100px;
     padding-bottom: 0;
   }
 
   .cardInfos {
+    padding: 8px;
+    // padding-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
+    // padding: 10px;
     background-color: var(--background2);
     // margin-top: 10px;
 

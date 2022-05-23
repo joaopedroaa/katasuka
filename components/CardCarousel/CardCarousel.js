@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import useEmblaCarousel from "embla-carousel-react";
 import SimpleCard from "../SimpleCard"
+import SimpleCardSkeleton from "../SimpleCard/SimpleCardSkeleton"
 
 import useStats from "../../utils/useStats"
 import styles from './CardCarousel.module.scss'
-import CardCarouselSkeleton from "./CardCarouselSkeleton"
 
 import episodes from "../../data/episodes"
 
@@ -16,8 +16,23 @@ const CardCarousel = ({ url, filterAnime, slug, opt }) => {
     containScroll: "trimSnaps"
   })
 
-  if (loading) return <CardCarouselSkeleton />;
+
   if (error) return <p>Error...</p>;
+
+  if (loading) return (
+    <div className={styles.embla}>
+      <div className={styles.embla__viewport} ref={emblaRef}>
+        <div className={styles.embla__container}>
+          <div className={styles.gridSlide}><SimpleCardSkeleton /> </div>
+          <div className={styles.gridSlide}><SimpleCardSkeleton /> </div>
+          <div className={styles.gridSlide}><SimpleCardSkeleton /> </div>
+          <div className={styles.gridSlide}><SimpleCardSkeleton /> </div>
+          <div className={styles.gridSlide}><SimpleCardSkeleton /> </div>
+          <div className={styles.gridSlide}><SimpleCardSkeleton /> </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className={styles.embla}>
@@ -26,13 +41,28 @@ const CardCarousel = ({ url, filterAnime, slug, opt }) => {
           {stats.data.map((anime) => {
             if (opt == "recomend") anime = anime.entry
             if (!episodes[anime.mal_id] && filterAnime) return (<></>)
-
             return (
               <div key={anime.mal_id} className={styles.gridSlide}  >
                 <Link href={`/${slug}/${anime.mal_id}`}  >
                   <a>
-                    {opt == "recomend" && <SimpleCard id={anime.mal_id} slug={slug} imageUrl={anime.images.webp.large_image_url} title={anime.title} rating={anime.rating} />}
-                    {opt == "default" && <SimpleCard id={anime.mal_id} slug={slug} imageUrl={anime.images.webp.large_image_url} title={anime.title} rating={anime.rating} infoRight={anime.score} infoLeft={slug == "manga" ? anime.volumes : anime.episodes} filterAnime={filterAnime} />}
+                    {opt == "recomend" && <SimpleCard
+                      id={anime.mal_id}
+                      slug={slug}
+                      imageUrl={anime.images.webp.large_image_url}
+                      title={anime.title}
+                    />}
+
+                    {opt == "default" && <SimpleCard
+                      id={anime.mal_id}
+                      slug={slug}
+                      imageUrl={anime.images.webp.large_image_url}
+                      title={anime.title}
+                      infoRight={anime.type}
+                      infoLeft={slug == "manga" ?
+                        anime.volumes :
+                        `${anime.episodes} Eps`}
+                      filterAnime={filterAnime}
+                    />}
                   </a>
                 </Link>
               </div>

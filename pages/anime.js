@@ -22,7 +22,7 @@ const AnimePage = () => {
   // console.log(ss);
 
   return (
-    <TemplatePage title="Animes" description="Katasuka" >
+    <TemplatePage title="Animes" >
       <main className={styles.main}>
         <div className={styles.section}>
           <div className={styles.headerSearch}>
