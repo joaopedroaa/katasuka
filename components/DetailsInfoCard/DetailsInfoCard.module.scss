@@ -1,6 +1,6 @@
 .container {
   /* padding-top: 100px; */
-  height: 100vh;
+  // height: 80vh;
 }
 
 .infoCard {
@@ -11,12 +11,12 @@
 
   background-color: var(--background2);
   color: var(--foreground1);
-  margin: 0 100px;
-  border-radius: 20px;
-  box-shadow: 0 0px 10px var(--shadow);
-  // border: 0.1px solid var(--shadow);
+
+  box-shadow: 0 0px 8px var(--shadow);
+  border-radius: 14px;
+
   width: 95vw;
-  margin: auto;
+  margin: 60px auto 0;
 
   // border: 2px solid #ebebeb;
   // box-shadow: 0 14px 15px rgba(29,36,52,0.1),0 4px 2px rgba(0,0,0,0.04);
@@ -24,16 +24,15 @@
 
 
 
-  transition: 0.5s;
+
+  transition: box-shadow 0.5s ease;
   &:hover{
-    box-shadow: 0 4px 40px var(--shadow);
-    transition: 0.5s;
+    box-shadow: 0 4px 30px var(--shadow);
+    transition: box-shadow 0.5s ease;
   }
 
 
   .infoCardImage {
-    // height: 100%;
-    // display: flex;
     margin-top: -10px;
     margin-right: 10px;
     margin-bottom: -10px;
@@ -41,9 +40,6 @@
 
     height: 400px;
     width: 390px;
-    // margin: auto;
-    // background-color: red;
-
   }
 
   .infoCardText {
@@ -100,10 +96,11 @@
 
 
       span {
+        font-size: 0.9rem;
         margin: 0 7px;
         border: 2px solid var(--principal1);
         border-radius: 8px;
-        padding: 4px;
+        padding: 2px 3px;
       }
     }
   }

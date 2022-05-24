@@ -26,6 +26,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>

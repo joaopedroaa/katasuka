@@ -22,7 +22,7 @@ import cookies from 'js-cookie'
 
 
 const DetailsInfoCard = ({ slug, anime }) => {
-  const { user, logout } = useUser()
+  // const { user, logout } = useUser()
   // console.log(opt);
   // if (getUserFromCookie) {
   // console.log(anime.id);
@@ -41,7 +41,7 @@ const DetailsInfoCard = ({ slug, anime }) => {
         <div className={styles.infoCardTextHeader}>
           <div >
             <p className={styles.demographics}>{anime.demographics && anime.demographics.map((demographic) => <span key={demographic.name}>{demographic.name}</span>)}</p>
-            <h1 className={styles.title}> {anime.title}</h1>
+            <h1 className={styles.title}>{anime.title}</h1>
             <h2 className={styles.year}>{anime.season} {anime.year} </h2>
           </div>
           <div >
@@ -53,7 +53,7 @@ const DetailsInfoCard = ({ slug, anime }) => {
 
 
         <div className={styles.spaceBetween}>
-          {<button className={styles.favoriteButton}>Favorite button</button>}
+          {/* {<button className={styles.favoriteButton}>Favorite button</button>} */}
 
 
           <div className={styles.genre}>

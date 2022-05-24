@@ -39,7 +39,8 @@
   width: 100%;
   // margin-right: 0;
   background-color: var(--background2);
-  // border: 1px solid var(--shadow);
+  box-shadow: 0 0 8px var(--shadow);
+  border-radius: 14px;
 
   h3{
     color: var(--principal1);

@@ -132,7 +132,7 @@ const User = () => {
 
 
   return (
-    <TemplatePage title="Logue" >
+    <TemplatePage title="Profile" >
       <div className={styles.main}>
         <h1>loading</h1>
         {/* <p>Você precisa estar logado(a) para ver seu perfil.</p> */}

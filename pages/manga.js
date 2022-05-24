@@ -19,13 +19,20 @@ const MangaPage = () => {
 
   return (
     <TemplatePage title="Mangas" >
+        {/* <div className={`${styles.bannerImage} ${styles.parallax} ${styles.bannerManga}`}></div> */}
       <main className={styles.main}>
         <div className={styles.section}>
-          <div className={styles.headerSearch}>
+
+          <div className={`${styles.headerSearch} ${styles.bannerManga}`}>
             <div className={styles.headerSearchLeft}></div>
+
+            <div className={styles.headerSearchCenter}>
+
             <h1 className={styles.title}>
               Katasuka
             </h1>
+            </div>
+
             <div className={styles.headerSearchRight}>
               <input type="text" name="name" className={stylesSearch.searchText} onChange={(event) => { setSearch(event.target.value) }} />
               <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/manga?q=${search}`) }} className={stylesSearch.searchButton}>

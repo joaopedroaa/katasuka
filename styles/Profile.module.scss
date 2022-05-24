@@ -3,10 +3,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--background2);
+  // background-color: var(--principal1);
   color: var(--foreground1);
 
-  margin: 0 auto 2rem;
+  box-shadow: 0 0 8px var(--shadow);
+  border-radius: 14px;
+  width: 70vw;
+
+  margin:  2rem auto;
   // width: auto;
   padding: 30px;
 

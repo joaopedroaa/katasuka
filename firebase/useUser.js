@@ -41,14 +41,16 @@ const useUser = () => {
     })
 
     const userFromCookie = getUserFromCookie()
+
+    if (!userFromCookie) {
+      router.push('/login')
+      return
+    }
+
     if (userFromCookie) {
       setUser(userFromCookie)
     }
 
-    // if (!userFromCookie) {
-    //   router.push('/login')
-    //   return
-    // }
 
     return () => {
       cancelAuthListener()

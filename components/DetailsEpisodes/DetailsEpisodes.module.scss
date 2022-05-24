@@ -7,25 +7,31 @@
   margin: 0 20px;
   // border: 1px solid var(--shadow);
   border-top: none;
+  box-shadow: 0 0 2px var(--shadow);
 
+  .liEpisodes{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    background-color: var(--background2);
+    border-top: 1px solid var(--shadow);
+    padding: 30px;
+
+
+    &:last-child{
+      border-bottom: 1px solid var(--shadow);
+    }
+  }
+
+
+  .liEpisodes:hover{
+    list-style: none;
+    filter: brightness(95%);
+
+    // margin: 10px;
+
+  }
 }
 
 
-.liEpisodes{
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-
-  background-color: var(--background2);
-  border-top: 1px solid var(--shadow);
-  padding: 24px;
-  // margin: 10px;
-
-}
-.liEpisodes:hover{
-  list-style: none;
-  filter: brightness(95%);
-
-  // margin: 10px;
-
-}

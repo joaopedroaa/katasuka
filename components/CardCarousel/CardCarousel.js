@@ -21,7 +21,7 @@ const CardCarousel = ({ url, filterAnime, slug, opt }) => {
 
   if (loading) return (
     <div className={styles.embla}>
-      <div className={styles.embla__viewport} ref={emblaRef}>
+      <div className={styles.embla__viewport} >
         <div className={styles.embla__container}>
           <div className={styles.gridSlide}><SimpleCardSkeleton /> </div>
           <div className={styles.gridSlide}><SimpleCardSkeleton /> </div>
