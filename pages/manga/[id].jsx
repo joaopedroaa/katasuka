@@ -54,7 +54,7 @@ const MangaDetails = ({ anime }) => {
         <main className={`${full ? styles.mainContainerFull : styles.mainContainer}`}>
           <div className={styles.iframeSection}>
             <iframe className={`${styles.iframeManga} ${full ? styles.iframeMangaFull : styles.iframeMangaNormal}`} src={urlManga} frameBorder="0"></iframe>
-            <button className={`${styles.iframeMangaButton} ${full ? styles.iframeMangaButtonFull : styles.iframeMangaButtonNormal}`} onClick={() => { setFull(!full) }}>Full Screan</button>
+            <button className={`${styles.iframeMangaButton} ${full ? styles.iframeMangaButtonFull : styles.iframeMangaButtonNormal}`} onClick={() => { setFull(!full) }}>Full Screen</button>
           </div>
 
           <div style={displayFull} className={`${styles.sidebar}`}>
