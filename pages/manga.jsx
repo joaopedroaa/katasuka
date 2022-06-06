@@ -18,7 +18,7 @@ const MangaPage = () => {
   const handleChange = nextChecked => { setChecked(nextChecked); };
 
   return (
-    <TemplatePage title="Mangas" >
+    <TemplatePage title="Mangas" type="manga" >
         {/* <div className={`${styles.bannerImage} ${styles.parallax} ${styles.bannerManga}`}></div> */}
       <main className={styles.main}>
         <div className={styles.section}>
@@ -34,18 +34,18 @@ const MangaPage = () => {
             </div>
 
             <div className={styles.headerSearchRight}>
-              <input type="text" name="name" className={stylesSearch.searchText} onChange={(event) => { setSearch(event.target.value) }} />
+              {/* <input type="text" name="name" className={stylesSearch.searchText} onChange={(event) => { setSearch(event.target.value) }} />
               <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/manga?q=${search}`) }} className={stylesSearch.searchButton}>
               <MdSearch />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
 
-        <div className={styles.section}>
+        {/* <div className={styles.section}>
           {searchUrl && <h2 className={styles.subtitle}>Search result</h2>}
           {searchUrl && <CardCarousel slug="manga" opt="default" url={searchUrl} filterAnime={filterAnime} />}
-        </div>
+        </div> */}
 
         <div className={styles.section}>
           <Link href="/manga/top">

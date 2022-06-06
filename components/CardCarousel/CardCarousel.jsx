@@ -6,7 +6,7 @@ import SimpleCardSkeleton from "../SimpleCard/SimpleCardSkeleton"
 import useStats from "../../utils/useStats"
 import styles from './CardCarousel.module.scss'
 
-import episodes from "../../data/episodes"
+import episodes from "../../config/episodes"
 
 const CardCarousel = ({ url, filterAnime, slug, opt }) => {
   const { stats, loading, error } = useStats(url);

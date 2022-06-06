@@ -2,9 +2,9 @@ import TemplateHead from "../TemplateHead"
 import Header from "../Header"
 import Footer from "../Footer"
 import FirebaseAuth from "../FirebaseAuth"
-import config from "../../data/config.json"
+import config from "../../config/seo.json"
 
-const TemplatePage = ({ title, description, image, styles, children }) => {
+const TemplatePage = ({ title, type, description, image, styles, children }) => {
 
 
   return (
@@ -13,7 +13,7 @@ const TemplatePage = ({ title, description, image, styles, children }) => {
       description={description ? description : config.description}
       image={image}
     >
-      <div style={styles}><Header /></div>
+      <div style={styles}><Header type={type} /></div>
       {children}
       <div style={styles}><Footer /></div>
     </TemplateHead>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import useStats from "../../utils/useStats"
-import episodes from "../../data/episodes"
+import episodes from "../../config/episodes"
 import SimpleCard from "../../components/SimpleCard"
 import SimpleCardSkeleton from "../../components/SimpleCard/SimpleCardSkeleton"
 

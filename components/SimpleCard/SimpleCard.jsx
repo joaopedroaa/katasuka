@@ -1,5 +1,5 @@
 import styles from './SimpleCard.module.scss'
-import episodes from "../../data/episodes"
+import episodes from "../../config/episodes"
 import synopsisResume from "../../utils/synopsisResume"
 import SteamEffect from '../SteamEffect'
 

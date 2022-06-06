@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 import useStats from "../../utils/useStats"
-import episodes from "../../data/episodes"
+import episodes from "../../config/episodes"
 
 import styles from './DetailsEpisodes.module.scss'
 

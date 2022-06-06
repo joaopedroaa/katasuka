@@ -1,51 +1,67 @@
-import { useState, useEffect } from 'react';
-import Head from 'next/head'
-import Link from 'next/link'
+import { useState, useEffect } from "react";
+import Head from "next/head";
+import Link from "next/link";
 
-import styles from '../styles/AnimeHome.module.scss'
-import stylesSearch from '../components/Search/Search.module.scss'
+import styles from "../styles/AnimeHome.module.scss";
+import stylesSearch from "../components/Search/Search.module.scss";
 
-import CardCarousel from "../components/CardCarousel"
-import TemplatePage from "../components/TemplatePage"
-import Search from "../components/Search"
+import CardCarousel from "../components/CardCarousel";
+import TemplatePage from "../components/TemplatePage";
+import Search from "../components/Search";
 import Switch from "react-switch";
 import { MdSearch } from "react-icons/md";
-import { getUserFromCookie } from "../firebase/handleCookies"
+import { getUserFromCookie } from "../firebase/handleCookies";
 
 const AnimePage = () => {
   const [filterAnime, setChecked] = useState(false);
   const [search, setSearch] = useState();
   const [searchUrl, setSearchUrl] = useState();
-  const handleChange = nextChecked => { setChecked(nextChecked); };
+  const handleChange = (nextChecked) => {
+    setChecked(nextChecked);
+  };
 
   // getUserFromCookie()
   // console.log(ss);
 
   return (
-    <TemplatePage title="Animes" >
+    <TemplatePage title="Animes" type="anime">
       {/* <div className={`${styles.bannerImage} ${styles.parallax} ${styles.bannerAnime}`}>
 
       </div> */}
       <main className={styles.main}>
         <div className={styles.section}>
           <div className={`${styles.headerSearch} ${styles.bannerAnime}`}>
-            <div className={styles.headerSearchLeft}>
-
-            </div>
+            <div className={styles.headerSearchLeft}></div>
 
             <div className={styles.headerSearchCenter}>
-              <h1 className={styles.title}>
-                Katasuka
-              </h1>
-
+              <h1 className={styles.title}>Katasuka</h1>
             </div>
 
             <div className={styles.headerSearchRight}>
-              <input type="text" name="name" className={stylesSearch.searchText} onChange={(event) => { setSearch(event.target.value) }} />
-              <button onClick={() => { setSearchUrl(`https://api.jikan.moe/v4/anime?q=${search}`) }} className={stylesSearch.searchButton}><MdSearch /></button>
+              {/* <input
+                type="text"
+                name="name"
+                className={stylesSearch.searchText}
+                onChange={(event) => {
+                  setSearch(event.target.value);
+                }}
+              />
+
+              <button
+                onClick={() => {
+                  setSearchUrl(`https://api.jikan.moe/v4/anime?q=${search}`);
+                }}
+                className={stylesSearch.searchButton}
+              >
+                <MdSearch />
+              </button> */}
             </div>
           </div>
         </div>
+
+
+
+
 
 
         <div className={styles.section}>
@@ -86,13 +102,7 @@ const AnimePage = () => {
           <CardCarousel slug="anime" opt="default" url='https://api.jikan.moe/v4/top/anime' filterAnime={filterAnime} />
         </div>
       </main>
-
-
-
-
-
     </TemplatePage>
-
-  )
-}
-export default AnimePage
+  );
+};
+export default AnimePage;

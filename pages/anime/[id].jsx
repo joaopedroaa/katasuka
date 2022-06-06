@@ -4,7 +4,7 @@ import Head from 'next/head'
 import styles from '../../styles/Details.module.scss'
 import stylesHome from '../../styles/AnimeHome.module.scss'
 
-import episodes from "../../data/episodes"
+import episodes from "../../config/episodes"
 
 
 import CardCarousel from "../../components/CardCarousel"

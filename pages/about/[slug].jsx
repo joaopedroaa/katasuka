@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ ...ctx }) {
   const { slug } = ctx.params;
   const content = await import(`../../posts/${slug}.md`);
-  const config = await import(`../../data/config.json`);
+  const config = await import(`../../config/seo.json`);
   const data = matter(content.default);
 
 
